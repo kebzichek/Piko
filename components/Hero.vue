@@ -44,19 +44,19 @@ export default {
 
         &.archivne-systemy {
 
-            background-image: url(../assets/images/hero_archivne_systemy.png);
+            background-image: url(~assets/images/hero_archivne_systemy.png);
           
         }
 
          &.trezory {
 
-            background-image: url(../assets/images/hero_trezory.png);
+            background-image: url(~assets/images/hero_trezory.png);
 
         }
         
         &.bezpecnost {
 
-            background-image: url(../assets/images/hero_bezpecnostne_prvky.png);
+            background-image: url(~assets/images/hero_bezpecnostne_prvky.png);
 
         }
 

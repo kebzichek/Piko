@@ -32,6 +32,7 @@
     &__contentmenu {
 
         background: #1F1F1F;
+        margin-top: -7px;
 
         &--wrapper {
 
@@ -43,6 +44,12 @@
         &--items {
 
             display: flex;
+
+            @media (max-width: 640px){
+
+                display: none;
+
+            }
 
         }
 
@@ -82,7 +89,7 @@
                 &:before {
 
                     content: '';
-                    background-image: url('../assets/images/svg/realizace.svg');
+                    background-image: url('~assets/images/svg/realizace.svg');
                     width: 18px;
                     height: 18px;
                     margin-right: 10px;

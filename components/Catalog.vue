@@ -5,7 +5,7 @@
 
             <div class="catalog__info--img">
 
-                <img :src="`~assets/images/${srcInfo}.png`" alt="Regaly">
+                <img :src="`/images/${srcInfo}`" alt="Regaly">
 
             </div>
 
@@ -32,8 +32,8 @@
 
                         <ul>
 
-                            <li><a href="#">EK 7500</a></li>
-                            <li><a href="#">EK 7500</a></li>
+                            <li><nuxt-link to="#">EK 7500</nuxt-link></li>
+                            <li><nuxt-link to="#">EK 7500</nuxt-link></li>
 
                         </ul>
 
@@ -45,13 +45,56 @@
 
                             <p class="text">{{ textCatalog }}</p>
                             <div class="links">
-                                <a href="#" class="btn">Viac info</a>
-                                <a href="#" class="download">Stiahnúť katalóg</a>
+                                <section>
+                                <button @click="isComponentModalActive = true" class="btn">Viac info</button>
+                                <b-modal :active.sync="isComponentModalActive">
+                                    <div class="pop-up__wrapper">
+
+                                        <div class="pop-up__title">
+
+                                            <h1>Regálový systém EK 7500</h1>
+
+                                        </div>
+
+                                        <div class="pop-up__content">
+
+                                            <div class="pop-up__content--left">
+
+                                                <div class="main-img"><img src="images/pop-up-main.png" alt="Regaly"></div>
+                                                <div class="gallery">
+
+                                                    <div class="item"><img src="images/pop-up-1.png" alt="1"></div>
+                                                    <div class="item"><img src="images/pop-up-2.png" alt="1"></div>
+                                                    <div class="item"><img src="images/pop-up-3.png" alt="1"></div>
+                                                    <div class="item"><img src="images/pop-up-4.png" alt="1"></div>
+                                                    <div class="item"><img src="images/pop-up-5.png" alt="1"></div>
+                                                    <div class="item"><img src="images/pop-up-6.png" alt="1"></div>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="pop-up__content--right">
+
+                                                <div class="info">Pohyblivé regálové systémy sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky. S použitím pohyblivých regálov je možné archivačnú kapacitu až zdvojnásobiť a ušetrený priestor následne využiť na ďalší regálový systém, alebo na vytvorenie nového pracoviska. Vďaka modulárnej konštrukcii umožňujú bezpečné skladovanie a archivovanie rôznych dokumentov a predmetov. Celý systém môže byť kedykoľvek doplnený o vybrané príslušenstvo, a tak dokonale uspokojiť požiadavky zákazníkov. </div>
+                                                <div class="info-img"><img src="images/pop-up-info-img.png" alt="Info img"></div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="table"></div>
+
+                                    </div>
+
+                                </b-modal>
+                                </section>
+                                <nuxt-link to="#" class="download">Stiahnúť katalóg</nuxt-link>
                             </div>
 
                         </div>
 
-                        <div class="img__wrapper" :style="{backgroundImage: 'url(\'~assets/images/'+ srcCatalog +'.png\')'}">
+                        <div class="img__wrapper" :style="{backgroundImage: 'url(\'/images/'+ srcCatalog +'.png\')'}">
 
                         </div>
 
@@ -60,6 +103,7 @@
                 </div>
 
             </div>
+
 
         </div>
 
@@ -70,6 +114,11 @@
 
 <script>
 export default {
+    data() {
+            return {
+                isComponentModalActive: false,
+            }
+    },
     props: {
 
         title: {
@@ -104,10 +153,23 @@ export default {
         position: relative;
         padding-bottom: 285px;
         margin-bottom: 90px;
+
+        @media (max-width: 769px) {
+
+            padding-bottom: 50px;
+
+        }
+
         &.catalog__right {
 
             padding-bottom: 150px;
             margin-bottom: 0px;
+
+            @media (max-width: 769px) {
+
+                padding-bottom: 30px;
+
+            }
 
         }
 
@@ -115,7 +177,7 @@ export default {
 
    &__background {
 
-       background-image: url(../assets/images/svg/catalog_bck.svg);
+       background-image: url(~assets/images/svg/catalog_bck.svg);
        background-size: cover;
        background-repeat: no-repeat;
        background-position: center;
@@ -142,6 +204,16 @@ export default {
 
            right: 0px;
 
+           img {
+
+            @media (max-width: 570px) {
+
+                transform: rotateY(180deg);
+
+            }
+            
+           }
+
        }
 
        .catalog__info--box {
@@ -151,7 +223,14 @@ export default {
             margin-right: 450px;
             margin-top: 80px;
 
-            @media (max-width: 769px) {
+            @media (max-width: 570px) {
+
+                margin-top: 60%;
+                text-align: right;
+
+            }
+
+            @media (min-width: 570px) and (max-width: 769px) {
 
                 width: 490px;
                 margin-top: 48%;
@@ -177,7 +256,13 @@ export default {
                justify-content: flex-start;
                padding: 70px 30px 55px 50px;
 
-               @media (max-width: 1215px) {
+                @media (max-width: 570px) {
+
+                    padding: 50px 20px;
+
+                }
+
+               @media (min-width: 570px) and (max-width: 1215px) {
 
                 padding-top: 120px;
 
@@ -233,7 +318,15 @@ export default {
             margin-left: 460px;
             margin-top: 80px;
 
-            @media (max-width: 769px) {
+            @media (max-width: 570px) {
+
+                width: 100%;
+                margin-left: 0px;
+                margin-top: 60%;
+
+            }
+
+            @media (min-width: 570px) and (max-width: 769px) {
 
                 width: 490px;
                 margin: 48% 30px 0 auto;
@@ -263,7 +356,14 @@ export default {
                 padding: 70px 30px 55px 0px;
                 margin-top: -21.5px;
 
-                @media (max-width: 1215px) {
+                @media (max-width: 570px) {
+
+                     padding: 50px 20px;
+                     justify-content: center;
+
+                }
+
+                @media (min-width: 570px) and (max-width: 1215px) {
                 
                     padding-top: 130px;
 
@@ -307,11 +407,36 @@ export default {
             padding: 50px 40px;
             position: relative;
 
+            @media (max-width: 400px) {
+
+                padding: 50px 20px 100px 20px;
+
+            }
+
+            @media (min-width: 400px) and (max-width: 570px) {
+
+                padding: 50px 20px;
+
+            }
+
             .text-wrapper {
 
                 width: 613px;
 
-                @media (max-width: 769px) {
+                @media (max-width: 400px) {
+
+                   padding-right: 40%;
+                   position: relative;
+
+                }
+
+                @media (min-width: 400px) and (max-width: 570px) {
+
+                   margin-right: 50%;
+
+                }
+
+                @media (min-width: 570px) and (max-width: 769px) {
 
                     width: 330px;
                     margin-right: 280px;
@@ -328,6 +453,19 @@ export default {
 
                     margin-bottom: 40px;
 
+                    @media (max-width: 400px) {
+
+                        max-height: 200px;
+                        overflow: scroll;
+
+                    }
+                    
+                    @media (min-width: 400px) and (max-width: 570px) {
+
+                        max-height: 250px;
+                        overflow: scroll;
+
+                    }
                    
 
                 }
@@ -336,7 +474,18 @@ export default {
 
                     display: flex;
 
-                    @media (max-width: 769px) {
+                    @media (max-width: 400px) {
+
+                        position: absolute;
+                        flex-direction: column;
+                        z-index: 2;
+                        width: 100%;
+                        text-align: center;
+                        font-size: 14px;
+
+                    }
+
+                    @media (min-width: 400px) and (max-width: 769px) {
 
                         display: block;
 
@@ -350,8 +499,18 @@ export default {
                     display: flex;
                     align-items: center;
                     margin-left: 50px;
+
+                    @media (max-width: 400px) {
+
+                        background: #ffffff;
+                        color: black;
+                        margin-left: 0px;
+                        padding: 6.5px 0px;
+                        justify-content: center;
+
+                    }
                 
-                    @media (max-width: 769px) {
+                    @media (min-width: 400px) and (max-width: 769px) {
 
                         margin-left: 0px;
                         margin-top: 20px;
@@ -361,13 +520,21 @@ export default {
                     &:before {
 
                         content: '';
-                        background-image: url(../assets/images/svg/download.svg);
+                        background-image: url(~assets/images/svg/download.svg);
                         background-repeat: no-repeat;
                         background-size: cover;
                         width: 20px;
                         height: 20px;
                         display: flex;
                         margin-right: 10px;
+
+                        @media (max-width: 400px) {
+
+                            background-image: url(~assets/images/svg/download_dark.svg);
+                            width: 15px;
+                            height: 15px;
+
+                        }
 
                     }
 
@@ -387,7 +554,25 @@ export default {
                 background-repeat: no-repeat;
                 background-size: cover; 
 
-                @media (max-width: 769px) {
+                @media (max-width: 400px) {
+
+                    background-position: center;  
+                    height: 100%;
+                    width: 110px; 
+                    top: 0px;
+
+                }
+
+                @media (min-width: 400px) and (max-width: 570px) {
+
+                    height: 100%;
+                    width: 180px;
+                    background-position: center;  
+                   
+
+                }
+
+                @media (min-width: 570px) and (max-width: 769px) {
 
                     width: 330px;
                     height: 100%;
@@ -416,19 +601,26 @@ export default {
                 display: flex;
                 align-items: center;
 
+                
+
                 li {
 
                     display: flex;
 
                     a {
 
-                        background: #2385B6;
+                        
                         color: white;
                         font-size: 18px;
                         padding: 10px 80px;
                         opacity: 0.4;
 
-                      
+                      @media (max-width: 570px) {
+
+                          padding: 10px 20px;
+                          font-size: 14px;
+
+                      }
 
                     }  
                     
@@ -445,6 +637,123 @@ export default {
                 }
 
             }   
+
+        }
+
+    }
+
+}
+
+.pop-up {
+
+    &__wrapper {
+
+        background: #ffffff;
+
+    }
+
+    &__title {
+
+        padding: 10px 30px;
+        font-family: Exo2-Medium;
+        font-size: 28px;
+
+    }
+
+    &__content {
+
+        padding: 50px 30px;
+        display: flex;
+
+        @media (max-width: 400px) {
+
+            flex-direction: column;
+
+        }
+
+        &--left {
+
+            width: 40%;
+            margin-right: 30px;
+
+            @media (max-width: 400px) {
+
+                width: 100%;
+                margin-bottom: 30px;
+
+            }
+
+            .gallery {
+
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 40px;
+
+                @media (max-width: 400px) {
+
+                    justify-content: center;
+
+                }
+
+                .item {
+
+                    width: 110px;
+                    height: 110px;
+                    margin-right: 4%;
+                    margin-bottom: 4%;
+
+                    @media (max-width: 400px) {
+                        
+                        width: 100px;
+                        height: 100px;
+                        margin-right: 1%;
+                        margin-bottom: 1%;
+
+                    }
+
+                    &:nth-child(3n) {
+
+                        @media (min-width: 955px) {
+
+                            margin-right: 0px;
+
+                        }
+
+                    }
+
+
+
+                    img {
+
+                        width: 100%;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        &--right {
+
+            width: 56%;
+            font-family: Exo2-Regular;
+            font-size: 14px;
+            color: #1F1F1F;
+            line-height: 25px;
+
+            @media (max-width: 400px) {
+
+                width: 100%;
+
+            }
+
+            .info {
+
+                margin-bottom: 30px;
+
+            }
 
         }
 

@@ -79,7 +79,7 @@ export default {
 
     &__background {
 
-        background-image: url(../assets/images/svg/video_text_bck.svg);
+        background-image: url(~assets/images/svg/video_text_bck.svg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -89,6 +89,12 @@ export default {
         top: 0px;
         left: 0px;
         z-index: -1;
+
+        @media (max-width: 570px) {
+
+            height: 150%;
+
+        }
 
 
     }
@@ -116,7 +122,13 @@ export default {
         margin-top: 100px;
         margin-right: 30px;
 
-   
+        @media (max-width: 570px) {
+
+            width: 100%;
+            margin-right: 0px;
+            margin-top: 40px;
+
+        }
 
         .text {
 
@@ -128,10 +140,16 @@ export default {
 
             width: 20px;
             height: 25px;
-            background-image: url(../assets/images/svg/arrow-down.svg);
+            background-image: url(~assets/images/svg/arrow-down.svg);
             background-size: cover;
             background-repeat: no-repeat;
             display: block;
+
+            @media (max-width: 570px) {
+
+                display: none;
+
+            }
 
         }
 
@@ -144,7 +162,13 @@ export default {
         justify-content: flex-end;
         margin-bottom: 40px;
 
-        @media (max-width: 769px) {
+        @media (max-width: 570px) {
+
+            margin-top: 0px;
+
+        }
+
+        @media (min-width: 570px) and (max-width: 769px) {
 
             width: 490px;
             margin: 0 0 0 auto;

@@ -2,25 +2,6 @@
   <div>
     <Header class="contentPage"></Header>
 
-      <!--<aside class="column is-2 section">
-        <p class="menu-label is-hidden-touch">
-          General
-        </p>
-        <ul class="menu-list">
-          <li
-            v-for="(item, key) of items"
-            :key="key"
-          >
-            <nuxt-link
-              :to="item.to"
-              exact-active-class="is-active"
-            >
-              <b-icon :icon="item.icon" /> {{ item.title }}
-            </nuxt-link>
-          </li>
-        </ul>
-      </aside>-->
-
       <nuxt />
 
       <footer class="footer">
@@ -29,21 +10,22 @@
             <div class="footer__contacts column is-5">
 
                 <div class="footer__contacts--text">
-
-                    <div class="footer__contacts--logo"></div>
-                    <div class="contact"><strong>PIKO, s. r. o.</strong><br>
-                        Ing. Štefan Konečný<br>
-                        Drevorubecká 122,<br>
-                        Považská Bystrica
+                    <div class="footer__contacts--left">
+                        <div class="footer__contacts--logo"></div>
+                        <div class="contact"><strong>PIKO, s. r. o.</strong><br>
+                            Ing. Štefan Konečný<br>
+                            Drevorubecká 122,<br>
+                            Považská Bystrica
+                        </div>
                     </div>
                     <div class="phone-mail">
-                        <a href="tel:+421 0627 282 937" class="phone"><span class="text">+421 0627 282 937</span></a>
-                        <a href="mailto:piko.sro@gmail.com" class="mail"><span class="text">piko.sro@gmail.com</span></a>
+                        <nuxt-link to="tel:+421 0627 282 937" class="phone"><span class="text">+421 0627 282 937</span></nuxt-link>
+                        <nuxt-link to="mailto:piko.sro@gmail.com" class="mail"><span class="text">piko.sro@gmail.com</span></nuxt-link>
                     </div>
                     <ul class="footer__menu">
 
-                        <li><a href="#">Bezpečnostné systémy</a></li>
-                        <li><a href="#">Trezory</a></li>
+                        <li><nuxt-link to="bezpecnost">Bezpečnostné systémy</nuxt-link></li>
+                        <li><nuxt-link to="trezory">Trezory</nuxt-link></li>
 
                     </ul>
 
@@ -98,11 +80,25 @@ export default {
 
 <style lang="less">
 
+@colorBlue: #2385B6;
+@colorYellow: #DF9E00;
+@colorRed: #B62323;
+
     .color__blue {
 
         .footer {
 
-            background-image: url(../assets/images/svg/footer_bck.svg);
+            background-image: url(~assets/images/svg/footer_bck.svg);
+
+            &__form {
+
+                @media (max-width: 769px){
+
+                    background: @colorBlue;
+
+                }
+
+            }
 
         }
 
@@ -110,7 +106,37 @@ export default {
 
             h2 {
 
-                background: #2385B6;
+                background: @colorBlue;
+
+            }
+
+        }
+
+        .catalog__items--menu {
+
+            ul {
+
+                a {
+
+                    background: @colorBlue;
+
+                }
+
+            }
+
+        }
+
+        .btn {
+
+            background: @colorBlue;
+
+        }
+
+        .pop-up {
+
+            &__title {
+
+                background: @colorBlue;
 
             }
 
@@ -122,9 +148,60 @@ export default {
 
         .footer {
 
-            background-image: url(../assets/images/svg/footer_bck_yellow.svg);
+            background-image: url(~assets/images/svg/footer_bck_yellow.svg);
+
+            &__form {
+
+                @media (max-width: 769px){
+
+                    background: @colorYellow;
+
+                }
+
+            }
 
         }
+
+        .web_content {
+
+            h2 {
+
+                background: @colorYellow;
+
+            }
+
+        }
+
+        .catalog__items--menu {
+
+            ul {
+
+                a {
+
+                    background: @colorYellow;
+
+                }
+
+            }
+
+        }
+
+        .btn {
+
+            background: @colorYellow;
+
+        }
+
+        .pop-up {
+
+            &__title {
+
+                background: @colorYellow;
+
+            }
+
+        }
+
 
     }
 
@@ -132,13 +209,66 @@ export default {
 
         .footer {
 
-            background-image: url(../assets/images/svg/footer_bck_red.svg);
+            background-image: url(~assets/images/svg/footer_bck_red.svg);
+
+            &__form {
+
+                @media (max-width: 769px){
+
+                    background: @colorRed;
+
+                }
+
+            }
+
+        }
+
+        .web_content {
+
+            h2 {
+
+                background: @colorRed;
+
+            }
+
+        }
+
+        .catalog__items--menu {
+
+            ul {
+
+                a {
+
+                    background: @colorRed;
+
+                }
+
+            }
+
+        }
+
+        .btn {
+
+            background: @colorRed;
+
+        }
+
+        .pop-up {
+
+            &__title {
+
+                background: @colorRed;
+
+            }
 
         }
 
     }
 
     .web_content {
+
+        position: relative;
+        z-index: 1;
 
         h2 {
 
@@ -148,6 +278,15 @@ export default {
             display: inline-block;
             padding: 5px 15px;
 
+            @media (max-width: 570px) {
+
+                font-size: 18px;
+                padding: 5px 5px;
+                width: 100%;
+                text-align: center;
+
+            }
+
         }
 
         .btn {
@@ -155,8 +294,16 @@ export default {
             font-family: Exo2-Medium;
             font-size: 18px;
             color: #FFFFFF;
-            background: #2385B6;
+            border: none;
             padding: 5px 25px;
+
+            @media (max-width: 400px) {
+
+                font-size: 14px;
+                width: 100%;
+                padding: 8.5px 25px;
+
+            }
 
 
         }   
@@ -186,21 +333,55 @@ export default {
       background: none;
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center;
       max-height: 700px;
       padding: 150px 0px 50px 0px;
       position: relative;
-      z-index: -3;
+
+      @media (max-width: 769px) {
+
+          padding: 0px;
+          background-image: none !important;
+
+      }
+
+      .container {
+
+        @media (max-width: 769px) {
+
+          padding: 0px;
+          margin: 0px;
+          width: 100%;
+
+        }
+
+      }
 
       &__wrapper {
 
         display: flex;
         align-items: flex-start;
 
+        @media (max-width: 769px) {
+
+            flex-direction: column;
+
+        }
+
       }
 
       &__contacts {
 
           color: #ffffff;
+
+            @media (max-width: 769px) {
+
+                order: 2;
+                width: 100%;
+                background-color: #131313;
+                padding: 50px 37px;
+
+            }
 
           a {
 
@@ -216,7 +397,7 @@ export default {
 
           &--logo {
 
-              background: url(../assets/images/svg/piko.svg);
+              background: url(~assets/images/svg/piko.svg);
               background-repeat: no-repeat;
               background-size: 100%;
               width: 70px;
@@ -227,9 +408,24 @@ export default {
 
           &--text {
 
+              @media (max-width: 769px) {
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+            } 
+
               .contact {
 
                   margin-bottom: 40px;
+
+                    @media (min-width: 400px) and (max-width: 769px) {
+
+                        margin-bottom: 0px;
+
+                    } 
 
                   strong {
 
@@ -244,6 +440,12 @@ export default {
                   display: flex;
                   flex-direction: column;
                   margin-bottom: 100px;
+
+                    @media (max-width: 769px) {
+
+                        margin-bottom: 0px;
+
+                    } 
 
                   a {
 
@@ -260,7 +462,7 @@ export default {
                       &:before {
 
                           content: '';
-                          background: url(../assets/images/svg/phone.svg);
+                          background: url(~assets/images/svg/phone.svg);
                           background-repeat: no-repeat;
                           background-size: cover;
                           width: 17px;
@@ -286,7 +488,7 @@ export default {
                       &:before {
 
                           content: '';
-                          background: url(../assets/images/svg/mail.svg);
+                          background: url(~assets/images/svg/mail.svg);
                           background-repeat: no-repeat;
                           background-size: cover;
                           width: 17px;
@@ -314,6 +516,12 @@ export default {
 
           display: flex;
 
+          @media (max-width: 769px) {
+
+              display: none;
+
+          } 
+
               li {
 
                   margin-right: 20px;
@@ -329,6 +537,13 @@ export default {
         }
 
         &__form {
+
+            @media (max-width: 769px) {
+
+                width: 100%;
+                padding: 150px 37px 50px 37px;
+
+            }
 
             &--title {
 

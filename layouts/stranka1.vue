@@ -58,6 +58,9 @@
       display: flex;
       justify-content: space-between;
       padding: 30px;
+      position: absolute;
+      width: 100%;
+      top: 0px;
 
     }
 
@@ -65,7 +68,7 @@
 
       &--item {
 
-        background-image: url(../assets/images/svg/piko.svg);
+        background-image: url('~assets/images/svg/piko.svg');
         background-repeat: no-repeat;
         background-size: 100%;
         width: 70px;

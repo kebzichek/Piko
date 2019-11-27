@@ -2,7 +2,7 @@
   
   <div class="mainmenu__wrapper">
 
-    <a href="systemy" class="mainmenu__item system">
+    <nuxt-link to="systemy" class="mainmenu__item system">
 
       <div class="mainmenu__item--image">
 
@@ -19,9 +19,9 @@
 
       <div class="mainmenu__box"></div>
 
-    </a>
+    </nuxt-link>
 
-    <a href="#" class="mainmenu__item safe">
+    <nuxt-link to="trezory" class="mainmenu__item safe">
 
       <div class="mainmenu__item--image">
 
@@ -38,9 +38,9 @@
 
       <div class="mainmenu__box"></div>
 
-    </a>
+    </nuxt-link>
 
-    <a href="#" class="mainmenu__item security">
+    <nuxt-link to="bezpecnost" class="mainmenu__item security">
 
       <div class="mainmenu__item--image">
 
@@ -57,7 +57,7 @@
 
       <div class="mainmenu__box"></div>
 
-    </a>
+    </nuxt-link>
 
   </div>
 
@@ -71,13 +71,27 @@
 
     display: flex;
 
+     @media (max-width: 769px) {
+
+      flex-direction: column;
+      margin-top: 80px;
+
+    }
+
    }
 
    &__item {
 
     width: calc(100% / 3);
-    height: 90vh;
+    height: calc(100vh - 8px);
     position: relative;
+
+    @media (max-width: 769px) {
+
+      height: calc(100vh / 3 - 27px);
+      width: 100%;
+
+    }
 
     &:hover .mainmenu__item--image{
 
@@ -159,7 +173,7 @@
 
        .mainmenu__item--image {
 
-          background-image: url(../assets/images/archivni_systemy.png);
+          background-image: url(~assets/images/archivni_systemy.png);
 
        }
 
@@ -169,7 +183,7 @@
 
         .mainmenu__item--image {
 
-          background-image: url(../assets/images/trezory.png);
+          background-image: url(~assets/images/trezory.png);
 
         }
 
@@ -179,7 +193,7 @@
 
         .mainmenu__item--image {
 
-          background-image: url(../assets/images/bezpecnostne_prvky.png);
+          background-image: url(~assets/images/bezpecnostne_prvky.png);
 
         }
 
@@ -190,6 +204,13 @@
   &__box {
 
     height: 10px;
+    margin-top: -2px;
+
+    @media (max-width: 769px) {
+
+      display: none;
+
+    }
 
   }
 
@@ -215,7 +236,7 @@
 
     .arrow {
 
-      background: url(../assets/images/svg/arrow-right.svg);
+      background: url(~assets/images/svg/arrow-right.svg);
       background-repeat: no-repeat;
       background-size: 100%;
       width: 40px;
