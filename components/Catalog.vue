@@ -32,8 +32,7 @@
 
                         <ul>
 
-                            <li><nuxt-link to="#">EK 7500</nuxt-link></li>
-                            <li><nuxt-link to="#">EK 7500</nuxt-link></li>
+                            <li v-for="(text,index) in textCatalog" :key="index"><div class="teoretical-link" @click="view=index">{{text.link}}</div></li>
 
                         </ul>
 
@@ -43,7 +42,7 @@
 
                         <div class="text-wrapper">
 
-                            <p class="text">{{ textCatalog }}</p>
+                            <p class="text">{{ textCatalog[view].text }}</p>
                             <div class="links">
                                 <section>
                                 <button @click="isComponentModalActive = true" class="btn">Viac info</button>
@@ -76,7 +75,7 @@
 
                                             <div class="pop-up__content--right">
 
-                                                <div class="info">Pohyblivé regálové systémy sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky. S použitím pohyblivých regálov je možné archivačnú kapacitu až zdvojnásobiť a ušetrený priestor následne využiť na ďalší regálový systém, alebo na vytvorenie nového pracoviska. Vďaka modulárnej konštrukcii umožňujú bezpečné skladovanie a archivovanie rôznych dokumentov a predmetov. Celý systém môže byť kedykoľvek doplnený o vybrané príslušenstvo, a tak dokonale uspokojiť požiadavky zákazníkov. </div>
+                                                <div class="info">Pohyblivé regálové systémy sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky.</div>
                                                 <div class="info-img"><img src="images/pop-up-info-img.png" alt="Info img"></div>
 
                                             </div>
@@ -116,6 +115,7 @@
 export default {
     data() {
             return {
+                view: 0,
                 isComponentModalActive: false,
             }
     },
@@ -130,7 +130,7 @@ export default {
             required: true
         },
         textCatalog: {
-            type: String,
+            type: Array,
             required: true
         },
         srcInfo: {
@@ -138,7 +138,7 @@ export default {
         },
         srcCatalog: {
             type: String
-        }
+        },
 
     }
 }
@@ -607,9 +607,9 @@ export default {
 
                     display: flex;
 
-                    a {
+                    .teoretical-link {
 
-                        
+                        cursor: pointer;
                         color: white;
                         font-size: 18px;
                         padding: 10px 80px;
@@ -626,7 +626,7 @@ export default {
                     
                     &:first-child {
 
-                        a {
+                        .teoretical-link  {
 
                             opacity: 1;
 
