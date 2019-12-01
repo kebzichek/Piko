@@ -7,8 +7,7 @@
 
                     <ul class="hero__contentmenu--items">
 
-                        <li class="hero__contentmenu--item"><a href="#">Pohyblivé a pevné regály</a></li>
-                        <li class="hero__contentmenu--item"><a href="#">Knižničné regály</a></li>
+                        <li class="hero__contentmenu--item" v-for="(text,index) in menuItems" :key="index"><nuxt-link :class="view==index ? 'active' : ''" class="teoretical-link" @click="view=index" :to="'#'+text.id">{{text.link}}</nuxt-link></li>
 
                     </ul>
 
@@ -25,6 +24,22 @@
         </div>
 </template>
 
+<script>
+export default {
+
+    props: {
+
+        menuItems: {
+
+            type: Array,
+
+        }
+
+    }
+    
+}
+</script>
+
 <style lang="less">
 
 .hero {
@@ -33,6 +48,9 @@
 
         background: #1F1F1F;
         margin-top: -7px;
+        position: -webkit-sticky; 
+        position: sticky;
+        top: 0px;
 
         &--wrapper {
 

@@ -3,7 +3,7 @@
       <div>
       
       <Hero class="trezory" title="Trezory"></Hero>
-      <HeroMenu></HeroMenu>
+      <HeroMenu :menuItems="menuItems"></HeroMenu>
       
       </div>
       <div>
@@ -19,7 +19,10 @@
           srcCatalog="catalog_img"
           :textCatalog="catalogText1"
           title="Bezpečnostné trezorové skrine" 
-          textInfo="Bezpečnostné trezorové skrine triedy EK 4100 - 4300 disponujú jednokrídlovou alebo dvojkrídlovou konštrukciou dverí (v závislosti od veľkosti skrine), zaistením dverí aretačnými čapmi a trojsmerným rozvorovým mechanizmom. Trezorové skrine sú štandardne uzamykateľné mechanickým bezpečnostným zámkom s dvomi kľúčmi (na želanie je možné zostaviť kombináciu zámkov podľa výberu zákazníka).">
+          textInfo="Bezpečnostné trezorové skrine triedy EK 4100 - 4300 disponujú jednokrídlovou alebo dvojkrídlovou konštrukciou dverí (v závislosti od veľkosti skrine), zaistením dverí aretačnými čapmi a trojsmerným rozvorovým mechanizmom. Trezorové skrine sú štandardne uzamykateľné mechanickým bezpečnostným zámkom s dvomi kľúčmi (na želanie je možné zostaviť kombináciu zámkov podľa výberu zákazníka)."
+          :textPopup="textPopup1[view]"
+          >
+          
           </Catalog>
 
           <Catalog 
@@ -60,6 +63,8 @@ export default {
   },
    data(){
     return{
+      view: 0,
+
       catalogText1:[
         {link:"EK 4100",text:"Bezpečnostná trezorová skriňa jednoplášťovej konštrukcie zodpovedajúca zabezpečeniu triedy A podľa VDMA 24992."},
         {link:"EK 4200",text:"Ľahká bezpečnostná oceľová skriňa dvojplášťovej konštrukcie zodpovedajúca zabezpečeniu triedy B podľa VDMA 24992."},
@@ -70,12 +75,23 @@ export default {
         {link:"EK 4700.1 LV",text:"Bezpečnostné trezory so stupňom zabezpečenia triedy 1 podľa normy EN 1143-1 (30/50 RU)."},
         {link:"EK 4700.2 LV",text:"Bezpečnostné trezory so stupňom zabezpečenia triedy 2 podľa normy EN 1143-1 (50/80 RU)."},
         {link:"EK 4700.3",text:"Bezpečnostné trezory so stupňom zabezpečenia triedy 3 podľa normy EN 1143-1 (80/120 RU)."},
+      ],
+      textPopup1:[
+        {title:"Alalalalla",text:"Pohyblivé regálové systémy sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky."},
+        {title:"Alalalalla 2",text:"Pohyblivé Kebza regálové systémy Kebza sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky."},
+        {title:"Alalalalla 3",text:"Pohyblivé Kebza Kebza regálové systémy sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky."},
+      ],
+      menuItems:[
+        {link:"Bezpečnostné trezorové skrine",id:"bezpecnostne_trezorove_skrine"},
+        {link:"Bezpečnostné trezorové skrine",id:"bezpecnostne_trezorove_skrine"},
       ]
     }
   },
   head() {
 
     return {
+
+   
 
       bodyAttrs: {
 
