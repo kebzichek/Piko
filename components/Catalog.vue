@@ -32,7 +32,7 @@
 
                         <ul>
 
-                            <li v-for="(text,index) in textCatalog" :key="index"><div class="teoretical-link" @click="view=index">{{text.link}}</div></li>
+                            <li v-for="(text,index) in textCatalog" :key="index"><div :class="view==index ? 'active' : ''" class="teoretical-link" @click="view=index">{{text.link}}</div></li>
 
                         </ul>
 
@@ -44,7 +44,7 @@
 
                             <p class="text">{{ textCatalog[view].text }}</p>
                             <div class="links">
-                                <popup :textPopup="textPopup"></popup>
+                                <popup :textPopup="textPopup[view]"></popup>
                                 <nuxt-link to="#" class="download">Stiahnúť katalóg</nuxt-link>
                             </div>
 
@@ -83,6 +83,8 @@ export default {
                 view: 0,
                 textPopup: [
                     {title:"Alalalalla",text:"Pohyblivé regálové systémy sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky."},
+                    {title:"Alalalalla 2",text:"Pohyblivé Kebza regálové systémy Kebza sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky."},
+                    {title:"Alalalalla 3",text:"Pohyblivé Kebza Kebza regálové systémy sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky."},
                 ]
             }
     },
@@ -596,15 +598,15 @@ export default {
 
                     }  
                     
-                    &:first-child {
+              
 
                         .teoretical-link  {
-
+                            &.active{
                             opacity: 1;
-
+                            }
                         }
 
-                    }
+                    
 
                 }
 

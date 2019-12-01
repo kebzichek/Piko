@@ -6,7 +6,7 @@
 
             <div class="pop-up__title">
 
-            <h1>{{ textPopup[view].title }}</h1>
+            <h1>{{ textPopup.title }}</h1>
 
                 </div>
 
@@ -30,7 +30,7 @@
 
                         <div class="pop-up__content--right">
 
-                            <div class="info">Pohyblivé regálové systémy sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky.</div>
+                            <div class="info">{{textPopup.text}}</div>
                             <div class="info-img"><img src="images/pop-up-info-img.png" alt="Info img"></div>
 
                         </div>
@@ -59,7 +59,7 @@ export default {
 
         textPopup: {
 
-            type: Array,
+            type: Object,
             required: true,
 
         }
