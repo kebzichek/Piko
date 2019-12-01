@@ -44,7 +44,7 @@
 
                             <p class="text">{{ textCatalog[view].text }}</p>
                             <div class="links">
-                                <Popup :textPopup="textPopup"></Popup>
+                                <popup :textPopup="textPopup"></popup>
                                 <nuxt-link to="#" class="download">Stiahnúť katalóg</nuxt-link>
                             </div>
 

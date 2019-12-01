@@ -1,6 +1,6 @@
 <template>
  <section>
-    <button @click="view=index" class="btn">Viac info</button>
+    <button @click="isComponentModalActive = true" class="btn">Viac info</button>
     <b-modal :active.sync="isComponentModalActive" v-for="(text,index) in textPopup" :key="index">
         <div class="pop-up__wrapper">
 
