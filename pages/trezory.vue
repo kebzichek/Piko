@@ -20,16 +20,16 @@
           :textCatalog="catalogText1"
           title="Bezpečnostné trezorové skrine" 
           textInfo="Bezpečnostné trezorové skrine triedy EK 4100 - 4300 disponujú jednokrídlovou alebo dvojkrídlovou konštrukciou dverí (v závislosti od veľkosti skrine), zaistením dverí aretačnými čapmi a trojsmerným rozvorovým mechanizmom. Trezorové skrine sú štandardne uzamykateľné mechanickým bezpečnostným zámkom s dvomi kľúčmi (na želanie je možné zostaviť kombináciu zámkov podľa výberu zákazníka)."
-          :textPopup="textPopup1[view]"
+          :textPopup="textPopup1"
           >
           
           </Catalog>
-
           <Catalog 
           class="catalog__right"
           srcInfo="catalog_img_right.png"
           srcCatalog="katalog"
-          :textCatalog="catalogText2" 
+          :textCatalog="catalogText2"
+          :textPopup="textPopup2" 
           title="Knižničné regály" 
           textInfo="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris elementum mauris vitae tortor. In rutrum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.">
           </Catalog>
@@ -63,8 +63,6 @@ export default {
   },
    data(){
     return{
-      view: 0,
-
       catalogText1:[
         {link:"EK 4100",text:"Bezpečnostná trezorová skriňa jednoplášťovej konštrukcie zodpovedajúca zabezpečeniu triedy A podľa VDMA 24992."},
         {link:"EK 4200",text:"Ľahká bezpečnostná oceľová skriňa dvojplášťovej konštrukcie zodpovedajúca zabezpečeniu triedy B podľa VDMA 24992."},
@@ -80,6 +78,12 @@ export default {
         {title:"Alalalalla",text:"Pohyblivé regálové systémy sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky."},
         {title:"Alalalalla 2",text:"Pohyblivé Kebza regálové systémy Kebza sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky."},
         {title:"Alalalalla 3",text:"Pohyblivé Kebza Kebza regálové systémy sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky."},
+      ],
+      textPopup2:[
+        {title:"K večeři jsem měl párky",text:"Pohyblivé regálové systémy sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky."},
+        {title:"Byly dost super 2",text:"Pohyblivé Kebza regálové systémy Kebza sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky."},
+        {title:"Měl jsem je s bagetou 3",text:"Pohyblivé Kebza Kebza regálové systémy sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky."},
+        {title:"Kebzaaaaa 3",text:"Pohyblivé Kebza Kebza regálové systémy sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky."},
       ],
       menuItems:[
         {link:"Bezpečnostné trezorové skrine",id:"bezpecnostne_trezorove_skrine"},

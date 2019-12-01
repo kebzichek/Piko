@@ -8,7 +8,6 @@
                 <img :src="`/images/${srcInfo}`" alt="Regaly">
 
             </div>
-
             <div class="catalog__info--box">
 
                 <h2>{{ title }}</h2>
@@ -41,10 +40,10 @@
                     <div class="catalog__items--text">
 
                         <div class="text-wrapper">
-
+                            
                             <p class="text">{{ textCatalog[view].text }}</p>
                             <div class="links">
-                                <popup :textPopup="textPopup"></popup>
+                                <popup :textPopup="textPopup[view]"></popup>
                                 <nuxt-link to="#" class="download">Stiahnúť katalóg</nuxt-link>
                             </div>
 
@@ -104,7 +103,8 @@ export default {
             type: String
         },
         textPopup: {
-            type: Array
+            type: Array,
+            required: false
         },
 
     }

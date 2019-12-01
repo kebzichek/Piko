@@ -51,7 +51,6 @@
 export default {
     data() {
             return {
-                view: 0,
                 isComponentModalActive: false,
             }
     },
