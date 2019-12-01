@@ -1,0 +1,187 @@
+<template>
+ <section>
+    <button @click="view=index" class="btn">Viac info</button>
+    <b-modal :active.sync="isComponentModalActive" v-for="(text,index) in textPopup" :key="index">
+        <div class="pop-up__wrapper">
+
+            <div class="pop-up__title">
+
+            <h1>{{ textPopup[view].title }}</h1>
+
+                </div>
+
+                    <div class="pop-up__content">
+
+                        <div class="pop-up__content--left">
+
+                         <div class="main-img"><img src="images/pop-up-main.png" alt="Regaly"></div>
+                            <div class="gallery">
+
+                                <div class="item"><img src="images/pop-up-1.png" alt="1"></div>
+                                <div class="item"><img src="images/pop-up-2.png" alt="1"></div>
+                                <div class="item"><img src="images/pop-up-3.png" alt="1"></div>
+                                <div class="item"><img src="images/pop-up-4.png" alt="1"></div>
+                                <div class="item"><img src="images/pop-up-5.png" alt="1"></div>
+                                <div class="item"><img src="images/pop-up-6.png" alt="1"></div>
+
+                            </div>
+
+                         </div>
+
+                        <div class="pop-up__content--right">
+
+                            <div class="info">Pohyblivé regálové systémy sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky.</div>
+                            <div class="info-img"><img src="images/pop-up-info-img.png" alt="Info img"></div>
+
+                        </div>
+
+                    </div>
+
+                <div class="table"></div>
+
+            </div>
+
+        </b-modal>
+ </section>
+
+
+
+</template>
+<script>
+export default {
+    data() {
+            return {
+                view: 0,
+                isComponentModalActive: false,
+            }
+    },
+    props: {
+
+        textPopup: {
+
+            type: Array,
+            required: true,
+
+        }
+
+    }
+}
+</script>
+<style lang="less">
+.pop-up {
+
+    &__wrapper {
+
+        background: #ffffff;
+
+    }
+
+    &__title {
+
+        padding: 10px 30px;
+        font-family: Exo2-Medium;
+        font-size: 28px;
+
+    }
+
+    &__content {
+
+        padding: 50px 30px;
+        display: flex;
+
+        @media (max-width: 400px) {
+
+            flex-direction: column;
+
+        }
+
+        &--left {
+
+            width: 40%;
+            margin-right: 30px;
+
+            @media (max-width: 400px) {
+
+                width: 100%;
+                margin-bottom: 30px;
+
+            }
+
+            .gallery {
+
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 40px;
+
+                @media (max-width: 400px) {
+
+                    justify-content: center;
+
+                }
+
+                .item {
+
+                    width: 110px;
+                    height: 110px;
+                    margin-right: 4%;
+                    margin-bottom: 4%;
+
+                    @media (max-width: 400px) {
+                        
+                        width: 100px;
+                        height: 100px;
+                        margin-right: 1%;
+                        margin-bottom: 1%;
+
+                    }
+
+                    &:nth-child(3n) {
+
+                        @media (min-width: 955px) {
+
+                            margin-right: 0px;
+
+                        }
+
+                    }
+
+
+
+                    img {
+
+                        width: 100%;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        &--right {
+
+            width: 56%;
+            font-family: Exo2-Regular;
+            font-size: 14px;
+            color: #1F1F1F;
+            line-height: 25px;
+
+            @media (max-width: 400px) {
+
+                width: 100%;
+
+            }
+
+            .info {
+
+                margin-bottom: 30px;
+
+            }
+
+        }
+
+    }
+
+}
+</style>

@@ -116,7 +116,7 @@ export default {
 
             ul {
 
-                a {
+                .teoretical-link {
 
                     background: @colorBlue;
 
@@ -176,7 +176,7 @@ export default {
 
             ul {
 
-                a {
+                .teoretical-link {
 
                     background: @colorYellow;
 
@@ -237,7 +237,7 @@ export default {
 
             ul {
 
-                a {
+                .teoretical-link {
 
                     background: @colorRed;
 
