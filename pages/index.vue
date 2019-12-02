@@ -2,7 +2,7 @@
   
   <div class="mainmenu__wrapper">
 
-    <nuxt-link to="systemy" class="mainmenu__item system">
+    <nuxt-link to="/systemy" class="mainmenu__item system">
 
       <div class="mainmenu__item--image">
 
@@ -21,7 +21,7 @@
 
     </nuxt-link>
 
-    <nuxt-link to="trezory" class="mainmenu__item safe">
+    <nuxt-link to="/trezory" class="mainmenu__item safe">
 
       <div class="mainmenu__item--image">
 
@@ -40,7 +40,7 @@
 
     </nuxt-link>
 
-    <nuxt-link to="bezpecnost" class="mainmenu__item security">
+    <nuxt-link to="/bezpecnost" class="mainmenu__item security">
 
       <div class="mainmenu__item--image">
 

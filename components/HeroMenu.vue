@@ -51,6 +51,7 @@ export default {
         position: -webkit-sticky; 
         position: sticky !important;
         top: 0px;
+        z-index: 4;
 
         &--wrapper {
 

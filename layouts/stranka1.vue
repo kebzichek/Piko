@@ -2,21 +2,21 @@
   <div>
     <header class="header__wrapper">
 
-      <nuxt-link to="/" class="header__logo">
-        
-        <div class="header__logo--item"></div>
-        
-      </nuxt-link>
-
-      <nav class="header__menu">
-
-        <ul class="header__menu--items">
-
-          <li class="header__menu--item"><nuxt-link to="trezory#form">Kontakty</nuxt-link></li>
-
-        </ul>
-
-      </nav>
+      <b-navbar class="header__menu">
+        <template slot="brand">
+            <b-navbar-item tag="router-link" :to="{ path: '/' }">
+                <img
+                  src="~/assets/images/svg/piko.svg"
+                  alt="Piko"
+                >
+            </b-navbar-item>
+        </template>
+        <template slot="start">
+            <nuxt-link to="/trezory#form" class="header__menu--item">
+                Kontakty
+            </nuxt-link>
+        </template>
+    </b-navbar>
 
     </header>
 
@@ -57,7 +57,7 @@
       background: #131313;
       display: flex;
       justify-content: space-between;
-      padding: 30px;
+      padding: 15px 30px;
       position: absolute;
       width: 100%;
       top: 0px;

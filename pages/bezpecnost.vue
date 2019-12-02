@@ -1,11 +1,9 @@
 <template>
     <div class="web_content">
-      <div>
       
       <Hero class="bezpecnost" title="Bezpečnostné prvky"></Hero>
-       <HeroMenu></HeroMenu>
+      <HeroMenu></HeroMenu>
       
-      </div>
       <div>
         <main>
 

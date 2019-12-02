@@ -72,6 +72,12 @@ export default {
         color: #FFFFFF;
         margin-bottom: 50px;
 
+        @media (max-width: 400px) {
+
+            font-size: 40px;
+
+        }
+
         h1 {
 
             line-height: 45px;

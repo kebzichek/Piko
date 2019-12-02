@@ -19,13 +19,13 @@
                         </div>
                     </div>
                     <div class="phone-mail">
-                        <nuxt-link to="tel:+421 0627 282 937" class="phone"><span class="text">+421 0627 282 937</span></nuxt-link>
-                        <nuxt-link to="mailto:piko.sro@gmail.com" class="mail"><span class="text">piko.sro@gmail.com</span></nuxt-link>
+                        <a href="tel:+421 0627 282 937" class="phone"><span class="text">+421 0627 282 937</span></a>
+                        <a href="mailto:piko.sro@gmail.com" class="mail"><span class="text">piko.sro@gmail.com</span></a>
                     </div>
                     <ul class="footer__menu">
 
-                        <li><nuxt-link to="bezpecnost">Bezpečnostné systémy</nuxt-link></li>
-                        <li><nuxt-link to="trezory">Trezory</nuxt-link></li>
+                        <li><nuxt-link to="/bezpecnost">Bezpečnostné systémy</nuxt-link></li>
+                        <li><nuxt-link to="/trezory">Trezory</nuxt-link></li>
 
                     </ul>
 

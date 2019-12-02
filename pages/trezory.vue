@@ -1,11 +1,9 @@
 <template>
     <div class="web_content">
-      <div class="hero_new">
       
       <Hero class="trezory" title="Trezory"></Hero>
       <HeroMenu :menuItems="menuItems"></HeroMenu>
       
-      </div>
       <div>
         <main>
 
@@ -22,6 +20,7 @@
           title="Bezpečnostné trezorové skrine" 
           textInfo="Bezpečnostné trezorové skrine triedy EK 4100 - 4300 disponujú jednokrídlovou alebo dvojkrídlovou konštrukciou dverí (v závislosti od veľkosti skrine), zaistením dverí aretačnými čapmi a trojsmerným rozvorovým mechanizmom. Trezorové skrine sú štandardne uzamykateľné mechanickým bezpečnostným zámkom s dvomi kľúčmi (na želanie je možné zostaviť kombináciu zámkov podľa výberu zákazníka)."
           :textPopup="textPopup1"
+          pdfDownload="katalog.pdf"
           >
           
           </Catalog>
@@ -33,7 +32,9 @@
           :textCatalog="catalogText2"
           :textPopup="textPopup2" 
           title="Bezpečnostné trezory" 
-          textInfo="Výrobkovú radu EK 4700 predstavujú bezpečnostné trezory v triedach bezpečnosti 0 - 5. Certifikované sú podľa normy EN 1143-1 v súlade s bezpečnostným štandardom NBÚ. Všetky trezory majú viacplášťovú konštrukciu. Dvere trezorov sú istené aretačnými čapmi a štvorstranným rozvorovým mechanizmom. Štandardné vybavenie všetkých trezorov predstavujú variabilne prestaviteľné police a príprava pre montáž EZS. ">
+          textInfo="Výrobkovú radu EK 4700 predstavujú bezpečnostné trezory v triedach bezpečnosti 0 - 5. Certifikované sú podľa normy EN 1143-1 v súlade s bezpečnostným štandardom NBÚ. Všetky trezory majú viacplášťovú konštrukciu. Dvere trezorov sú istené aretačnými čapmi a štvorstranným rozvorovým mechanizmom. Štandardné vybavenie všetkých trezorov predstavujú variabilne prestaviteľné police a príprava pre montáž EZS. "
+          pdfDownload="katalog.pdf"
+          >
           </Catalog>
 
         </main>

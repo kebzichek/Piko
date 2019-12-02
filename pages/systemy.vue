@@ -1,11 +1,9 @@
 <template>
     <div class="web_content">
-      <div>
       
       <Hero class="archivne-systemy" title="Archivné systémy"></Hero>
       <HeroMenu :menuItems="menuItems"></HeroMenu>
       
-      </div>
       <div>
         <main>
 

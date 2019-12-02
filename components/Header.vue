@@ -1,26 +1,30 @@
 <template>
     <header class="header__wrapper">
 
-      <nuxt-link to="/" class="header__logo">
-        
-        <div class="header__logo--item"></div>
-        
-      </nuxt-link>
-
-      <nav class="header__menu">
-
-        <ul class="header__menu--items">
-
-          <li class="header__menu--item"><nuxt-link to="systemy">Archivné systémy</nuxt-link></li>
-          <li class="header__menu--item"><nuxt-link to="bezpecnost">Bezpečnostné systémy</nuxt-link></li>
-          <li class="header__menu--item"><nuxt-link to="trezory">Trezory</nuxt-link></li>
-          <li class="header__menu--item"><nuxt-link to="#form">Kontakty</nuxt-link></li>
-
-        </ul>
-
-        <div class="header__menu-mobile" @click="active"></div>
-
-      </nav>
+      <b-navbar class="header__menu">
+        <template slot="brand">
+            <b-navbar-item tag="router-link" :to="{ path: '/' }">
+                <img
+                  src="~/assets/images/svg/piko.svg"
+                  alt="Piko"
+                >
+            </b-navbar-item>
+        </template>
+        <template slot="start">
+            <nuxt-link to="/systemy" class="header__menu--item">
+                Archivné systémy
+            </nuxt-link>
+            <nuxt-link to="/bezpecnost" class="header__menu--item">
+                Bezpečnostné systémy
+            </nuxt-link>
+            <nuxt-link to="/trezory" class="header__menu--item">
+                Trezory
+            </nuxt-link>
+            <nuxt-link to="#form" class="header__menu--item">
+                Kontakty
+            </nuxt-link>
+        </template>
+    </b-navbar>
 
     </header>
 </template>
@@ -80,6 +84,11 @@ export default {
 
     &__menu {
 
+      background: none;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
       &--items {
 
         display: flex;
@@ -103,15 +112,104 @@ export default {
 
       }
 
+      .navbar-brand {
+
+        @media (max-width: 1024px) {
+
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+
+        }
+
+      }
+
+      .navbar-burger {
+
+        color: white;
+
+        &.is-active {
+
+          position: fixed;
+          z-index: 999;
+          right: 30px;
+          color: black;
+
+        }
+
+        &:hover {
+
+          background-color: rgba(0, 0, 0, 0) !important;
+
+        }
+
+      }
+
+      .navbar-menu {
+
+        flex-grow: 0;
+        transition: 0.3s;
+
+        @media (max-width: 1024px) {
+
+          position: fixed;
+          left: 0px;
+          top: 0px;
+          width: 100vw;
+          height: 100vh;
+          color: black;
+          visibility: hidden;
+          opacity: 0;
+
+        }
+
+        &.is-active {
+
+          visibility: visible;
+          opacity: 1;
+
+        }
+
+        .navbar-start {
+
+          @media (max-width: 1024px) {
+
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          }
+
+        }
+
+
+      }
+
       &--item {
 
         margin-right: 20px;
+        color: #ffffff;  
+        transition: 0.3s;
+        font-family: Exo2-Regular;
+        display: flex;
+        align-items: center;
+      
 
-        @media (max-width: 769px) {
+        &:hover {
+         background: none !important;
+         color: #ffffff !important;
+         filter: brightness(80%);
+        }
 
-            margin-bottom: 30px;
+        @media (max-width: 1024px) {
 
-          }
+          color: black;
+          margin-right: 0px;
+          margin-bottom: 20px;
+
+        }
 
         a {
 

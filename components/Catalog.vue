@@ -44,7 +44,7 @@
                             <p class="text">{{ textCatalog[view].text }}</p>
                             <div class="links">
                                 <popup :textPopup="textPopup[view]"></popup>
-                                <nuxt-link to="#" class="download" download>Stiahnúť katalóg</nuxt-link>
+                                <a :href="pdfDownload" class="download" download>Stiahnúť katalóg</a>
                             </div>
 
                         </div>
@@ -108,6 +108,9 @@ export default {
             required: false
         },
         id: {
+            type: String
+        },
+        pdfDownload: {
             type: String
         }
 
