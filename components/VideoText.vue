@@ -7,7 +7,7 @@
 
                 <div class="video-text__text">
 
-                    <h2>{{ title }}</h2>
+                    <h2 class="video_h2">{{ title }}</h2>
 
                     <p class="text">{{ text }}</p>
 
@@ -133,6 +133,13 @@ export default {
         .text {
 
             margin: 30px 0px 60px 0px;
+            line-height: 25px;
+
+            @media (max-width: 400px) {
+
+                text-align: justify;
+
+            }
         
         }
 

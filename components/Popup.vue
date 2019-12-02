@@ -14,7 +14,7 @@
 
                         <div class="pop-up__content--left">
 
-                         <div class="main-img"><img src="images/pop-up-main.png" alt="Regaly"></div>
+                         <div class="main-img"><img :src="textPopup.mainimg" alt="Regaly"></div>
                             <div class="gallery">
 
                                 <div class="item"><img src="images/pop-up-1.png" alt="1"></div>
@@ -31,7 +31,7 @@
                         <div class="pop-up__content--right">
 
                             <div class="info">{{textPopup.text}}</div>
-                            <div class="info-img"><img src="images/pop-up-info-img.png" alt="Info img"></div>
+                            <div class="info-img"><img :src="textPopup.infoimg" alt="Info img"></div>
 
                         </div>
 

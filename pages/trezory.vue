@@ -1,6 +1,6 @@
 <template>
     <div class="web_content">
-      <div>
+      <div class="hero_new">
       
       <Hero class="trezory" title="Trezory"></Hero>
       <HeroMenu :menuItems="menuItems"></HeroMenu>
@@ -15,6 +15,7 @@
           </VideoText>
 
           <Catalog 
+          id="bezpecnostne_trezorove_skrine"
           srcInfo="catalog_info_regaly.png"
           srcCatalog="catalog_img"
           :textCatalog="catalogText1"
@@ -25,13 +26,14 @@
           
           </Catalog>
           <Catalog 
+          id="bezpecnostne_trezory"
           class="catalog__right"
           srcInfo="catalog_img_right.png"
           srcCatalog="katalog"
           :textCatalog="catalogText2"
           :textPopup="textPopup2" 
-          title="Knižničné regály" 
-          textInfo="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris elementum mauris vitae tortor. In rutrum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.">
+          title="Bezpečnostné trezory" 
+          textInfo="Výrobkovú radu EK 4700 predstavujú bezpečnostné trezory v triedach bezpečnosti 0 - 5. Certifikované sú podľa normy EN 1143-1 v súlade s bezpečnostným štandardom NBÚ. Všetky trezory majú viacplášťovú konštrukciu. Dvere trezorov sú istené aretačnými čapmi a štvorstranným rozvorovým mechanizmom. Štandardné vybavenie všetkých trezorov predstavujú variabilne prestaviteľné police a príprava pre montáž EZS. ">
           </Catalog>
 
         </main>
@@ -75,27 +77,25 @@ export default {
         {link:"EK 4700.3",text:"Bezpečnostné trezory so stupňom zabezpečenia triedy 3 podľa normy EN 1143-1 (80/120 RU)."},
       ],
       textPopup1:[
-        {title:"Alalalalla",text:"Pohyblivé regálové systémy sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky."},
-        {title:"Alalalalla 2",text:"Pohyblivé Kebza regálové systémy Kebza sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky."},
-        {title:"Alalalalla 3",text:"Pohyblivé Kebza Kebza regálové systémy sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky."},
+        {title:"EK 4100",text:"EK 4100 je ľahká bezpečnostná trezorová skriňa. Jej jednoplášťová oceľová konštrukcia vyhovuje stupňu zabezpečenia triedy A podľa VDMA 24992. Samotný plášť skrine je vyrobený z plechu hrúbky 2,5 mm.",mainimg:"/images/ek_4100.jpg",infoimg:"/images/ek_4100_infoimg.png"},
+        {title:"EK 4200",text:"EK 4200 predstavuje dvojplášťovú oceľovú skriňu. Konštrukcia trezorovej skrine zodpovedá stupňu zabezpečenia triedy B podľa VDMA 24992. Vonkajší plášť je vyrobený z plechu hrúbky 2,5 mm, hrúbka plechu vnútorného plášťa je 2 mm.",mainimg:"/images/ek_4200.jpg",infoimg:"/images/ek_4100_infoimg.png"},
+        {title:"EK 4300",text:"EK 4300 je dvojplášťová oceľová skriňa špeciálnej panelovej konštrukcie. Panelová konštrukcia obsahuje ohňovzdornú výplň, ktorá zabezpečuje zvýšenú odolnosť voči teplu a chráni tak uložené predmety a dokumenty pred poškodením v prípade požiaru miestnosti, v ktorej je skriňa umiestnená.",mainimg:"/images/ek_4300.jpg",infoimg:"/images/ek_4100_infoimg.png"},
       ],
       textPopup2:[
-        {title:"K večeři jsem měl párky",text:"Pohyblivé regálové systémy sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky."},
-        {title:"Byly dost super 2",text:"Pohyblivé Kebza regálové systémy Kebza sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky."},
-        {title:"Měl jsem je s bagetou 3",text:"Pohyblivé Kebza Kebza regálové systémy sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky."},
-        {title:"Kebzaaaaa 3",text:"Pohyblivé Kebza Kebza regálové systémy sú mimoriadne efektívne všade tam, kde sa skladuje veľké množstvo materiálu, pričom skladovanie si vyžaduje za každých okolností jednoduchý a rýchly prístup k jednotlivým položkám. Ich efektivita spočíva v optimalizácii využitia priestoru, uľahčení prístupu k uskladneným materiálom a zvýšení dostupného priestoru až o 80%. Princíp spočíva vo vytvorení vždy iba jednej prístupovej uličky, ktorá sa nachádza tam, kde ju momentálne potrebujete. S regálmi je možné pohybovať buď jednotlivo, alebo po skupinách, čo významne skracuje čas potrebný na dosiahnutie požadovanej zložky."},
+        {title:"EK 4700.0 LV",text:"Bezpečnostné trezory série EK 4700.0 LV vyhovujú stupňu zabezpečenia triedy 0 podľa normy EN 1143-1(30/30 RU) a sú vyhotovené v súlade s bezpečnostným štandardom NBÚ: vyhl. 88/2002 Z.z.",mainimg:"/images/ek_47000_lv.jpg",infoimg:"/images/ek_4100_infoimg.png"},
+        {title:"EK 4700.1 LV",text:"Bezpečnostné trezory série EK 4700.1 LV vyhovujú stupňu zabezpečenia triedy 1 podľa normy EN 1143-1(30/50 RU) a sú vyhotovené v súlade s bezpečnostným štandardom NBÚ: vyhl. 88/2002 Z.z. ",mainimg:"/images/ek_47001_lv.jpg",infoimg:"/images/ek_4100_infoimg.png"},
+        {title:"EK 4700.2 LV",text:"Bezpečnostné trezory série EK 4700.2 LV vyhovujú stupňu zabezpečenia triedy 2 podľa normy EN 1143-1(50/80 RU) a sú vyhotovené v súlade s bezpečnostným štandardom NBÚ: vyhl. 88/2002 Z.z. ",mainimg:"/images/ek_47002_lv.jpg",infoimg:"/images/ek_4100_infoimg.png"},
+        {title:"EK 4700.3",text:"Bezpečnostné trezory série EK 4700.3 vyhovujú stupňu zabezpečenia triedy 3 podľa EN 1143-1 (80/120 RU).",mainimg:"/images/ek_47003.jpg",infoimg:"/images/ek_4100_infoimg.png"},
       ],
       menuItems:[
         {link:"Bezpečnostné trezorové skrine",id:"bezpecnostne_trezorove_skrine"},
-        {link:"Bezpečnostné trezorové skrine",id:"bezpecnostne_trezorove_skrine"},
+        {link:"Bezpečnostné trezory",id:"bezpecnostne_trezory"},
       ]
     }
   },
   head() {
 
     return {
-
-   
 
       bodyAttrs: {
 

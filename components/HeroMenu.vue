@@ -13,7 +13,7 @@
 
                     <div class="hero__contentmenu--realizace">
 
-                        <a href="#">Mám zaujem o realizáciu</a>
+                        <nuxt-link to="#form">Mám zaujem o realizáciu</nuxt-link>
 
                     </div>
 
@@ -49,7 +49,7 @@ export default {
         background: #1F1F1F;
         margin-top: -7px;
         position: -webkit-sticky; 
-        position: sticky;
+        position: sticky !important;
         top: 0px;
 
         &--wrapper {
@@ -78,6 +78,8 @@ export default {
                 color: #ffffff;
                 padding: 12px;
                 display: flex;
+                transition: 0.3s;
+                font-family: Exo2-Medium;
 
                 &:hover {
 
@@ -97,6 +99,8 @@ export default {
                 color: #ffffff;
                 padding: 12px;
                 align-items: center;
+                transition: 0.3s;
+                font-family: Exo2-Medium;
 
                  &:hover {
 

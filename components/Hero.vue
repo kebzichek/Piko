@@ -32,6 +32,7 @@ export default {
 
 .hero {
 
+
     &__wrapper {
  
         background-position: center;    
@@ -70,6 +71,12 @@ export default {
         font-size: 45px;
         color: #FFFFFF;
         margin-bottom: 50px;
+
+        h1 {
+
+            line-height: 45px;
+
+        }
 
     }
 

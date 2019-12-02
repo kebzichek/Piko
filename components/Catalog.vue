@@ -1,5 +1,5 @@
 <template>
-    <div class="catalog__wrapper">
+    <div class="catalog__wrapper" :id="id">
 
         <div class="catalog__info--wrapper">
 
@@ -44,7 +44,7 @@
                             <p class="text">{{ textCatalog[view].text }}</p>
                             <div class="links">
                                 <popup :textPopup="textPopup[view]"></popup>
-                                <nuxt-link to="#" class="download">Stiahnúť katalóg</nuxt-link>
+                                <nuxt-link to="#" class="download" download>Stiahnúť katalóg</nuxt-link>
                             </div>
 
                         </div>
@@ -71,10 +71,11 @@
 
 <script>
 import Popup from '~/components/Popup'
+
 export default {
     components: {
 
-        Popup
+        Popup,
 
     },
     data() {
@@ -106,6 +107,9 @@ export default {
             type: Array,
             required: false
         },
+        id: {
+            type: String
+        }
 
     }
 }
@@ -247,7 +251,7 @@ export default {
 
             display: flex;
             align-items: center;
-            padding-bottom: 200px;
+            padding-bottom: 300px;
 
             @media (max-width: 1215px) {
                 
@@ -345,6 +349,12 @@ export default {
                     text-align: left;
                     line-height: 25px;
 
+                    @media (max-width: 400px) {
+
+                        text-align: justify;
+
+                    }
+
                 }
 
             }
@@ -419,6 +429,7 @@ export default {
                 .text {
 
                     margin-bottom: 40px;
+                    font-family: Exo2-Regular;
 
                     @media (max-width: 400px) {
 
@@ -466,6 +477,14 @@ export default {
                     display: flex;
                     align-items: center;
                     margin-left: 50px;
+                    transition: 0.3s;
+                    font-family: Exo2-Medium;
+
+                    &:hover {
+
+                        filter: brightness(70%);
+
+                    }
 
                     @media (max-width: 400px) {
 
@@ -567,6 +586,7 @@ export default {
 
                 display: flex;
                 align-items: center;
+                flex-wrap: wrap;
 
                 li {
 
@@ -580,6 +600,7 @@ export default {
                         padding: 10px 50px;
                         opacity: 0.4;
                         transition: 0.3s;
+                        font-family: Exo2-Medium;
 
                       @media (max-width: 570px) {
 

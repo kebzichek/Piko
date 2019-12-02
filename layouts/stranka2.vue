@@ -4,7 +4,7 @@
 
       <nuxt />
 
-      <footer class="footer">
+      <footer class="footer" id="form">
 
           <div class="container footer__wrapper">
             <div class="footer__contacts column is-5">
@@ -74,11 +74,50 @@ export default {
     Header,
     Hero
 
-  }
+  },
+  data() {
+            return {
+                firstname: null,
+                lastname: null,
+                age: null,
+                username: null,
+                password: null,
+                confirmPassword: null,
+                gender: null,
+                question: null,
+                flagTerms: false
+            }
+        },
+        methods: {
+            validateBeforeSubmit() {
+                this.$validator.validateAll().then((result) => {
+                    if (result) {
+                        this.$buefy.toast.open({
+                            message: 'Form is valid!',
+                            type: 'is-success',
+                            position: 'is-bottom'
+                        })
+                        return;
+                    }
+                    this.$buefy.toast.open({
+                        message: 'Form is not valid! Please check the fields.',
+                        type: 'is-danger',
+                        position: 'is-bottom'
+                    })
+                });
+            }
+        }
 }
 </script>
 
 <style lang="less">
+
+html {
+
+    scroll-behavior: smooth;
+    font-family: Exo2-Regular;
+
+}
 
 @colorBlue: #2385B6;
 @colorYellow: #DF9E00;
@@ -107,6 +146,20 @@ export default {
             h2 {
 
                 background: @colorBlue;
+
+
+            }
+
+            .video_h2 {
+
+                @media (max-width: 400px) {
+
+                    background: none;
+                    color: @colorBlue;
+                    font-weight: bold;
+                    font-size: 20px;
+
+                }
 
             }
 
@@ -163,10 +216,24 @@ export default {
         }
 
         .web_content {
+            
 
             h2 {
 
                 background: @colorYellow;
+
+            }
+
+            .video_h2 {
+
+                @media (max-width: 400px) {
+
+                    background: none;
+                    color: @colorYellow;
+                    font-weight: bold;
+                    font-size: 20px;
+
+                }
 
             }
 
@@ -228,6 +295,19 @@ export default {
             h2 {
 
                 background: @colorRed;
+
+            }
+
+            .video_h2 {
+
+                @media (max-width: 400px) {
+
+                    background: none;
+                    color: @colorRed;
+                    font-weight: bold;
+                    font-size: 20px;
+
+                }
 
             }
 
@@ -296,6 +376,14 @@ export default {
             color: #FFFFFF;
             border: none;
             padding: 5px 25px;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &:hover {
+
+                filter: brightness(80%);
+
+            }
 
             @media (max-width: 400px) {
 
@@ -420,6 +508,7 @@ export default {
               .contact {
 
                   margin-bottom: 40px;
+                  font-family: Exo2-Regular;
 
                     @media (min-width: 400px) and (max-width: 769px) {
 
@@ -440,6 +529,7 @@ export default {
                   display: flex;
                   flex-direction: column;
                   margin-bottom: 100px;
+                  font-family: Exo2-SemiBold;
 
                     @media (max-width: 769px) {
 
@@ -515,6 +605,7 @@ export default {
         &__menu {
 
           display: flex;
+          font-family: Exo2-Regular;
 
           @media (max-width: 769px) {
 
@@ -566,6 +657,23 @@ export default {
                 font-size: 18px;
                 cursor: pointer;
                 margin-top: -20px;
+                transition: 0.3s;
+
+                &:hover {
+
+                    color: #1F1F1F;
+
+                }
+
+            }
+
+            .form {
+
+                input {
+
+                    font-family: Exo2-Medium;
+
+                }
 
             }
 

@@ -230,7 +230,8 @@
       width: 220px;
       color: #ffffff;
       margin: 0;
-      padding: 0px
+      padding: 0px;
+      font-family: Exo2-SemiBold;
 
     }
 

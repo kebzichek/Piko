@@ -2,17 +2,17 @@
   <div>
     <header class="header__wrapper">
 
-      <a href="/" class="header__logo">
+      <nuxt-link to="/" class="header__logo">
         
         <div class="header__logo--item"></div>
         
-      </a>
+      </nuxt-link>
 
       <nav class="header__menu">
 
         <ul class="header__menu--items">
 
-          <li class="header__menu--item"><a href="#">Kontakty</a></li>
+          <li class="header__menu--item"><nuxt-link to="trezory#form">Kontakty</nuxt-link></li>
 
         </ul>
 

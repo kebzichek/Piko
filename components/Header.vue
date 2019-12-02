@@ -14,7 +14,7 @@
           <li class="header__menu--item"><nuxt-link to="systemy">Archivné systémy</nuxt-link></li>
           <li class="header__menu--item"><nuxt-link to="bezpecnost">Bezpečnostné systémy</nuxt-link></li>
           <li class="header__menu--item"><nuxt-link to="trezory">Trezory</nuxt-link></li>
-          <li class="header__menu--item"><nuxt-link to="#">Kontakty</nuxt-link></li>
+          <li class="header__menu--item"><nuxt-link to="#form">Kontakty</nuxt-link></li>
 
         </ul>
 
@@ -116,6 +116,14 @@ export default {
         a {
 
           color: #ffffff;
+          transition: 0.3s;
+          font-family: Exo2-Regular;
+
+          &:hover {
+
+            filter: brightness(80%);
+
+          }
 
           @media (max-width: 769px) {
 
