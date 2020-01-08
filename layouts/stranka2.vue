@@ -14,12 +14,12 @@
                         <div class="footer__contacts--logo"></div>
                         <div class="contact"><strong>PIKO, s. r. o.</strong><br>
                             Ing. Štefan Konečný<br>
-                            Drevorubecká 122,<br>
+                            Centrum 26/31,<br>
                             Považská Bystrica
                         </div>
                     </div>
                     <div class="phone-mail">
-                        <a href="tel:+421 0627 282 937" class="phone"><span class="text">+421 0627 282 937</span></a>
+                        <a href="tel:+421 905 716 306" class="phone"><span class="text">+421 905 716 306</span></a>
                         <a href="mailto:piko.sro@gmail.com" class="mail"><span class="text">piko.sro@gmail.com</span></a>
                     </div>
                     <ul class="footer__menu">

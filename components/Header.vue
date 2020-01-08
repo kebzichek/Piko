@@ -11,7 +11,7 @@
             </b-navbar-item>
         </template>
         <template slot="start">
-            <nuxt-link to="/systemy" class="header__menu--item">
+            <nuxt-link to="/" class="header__menu--item" @click="active">
                 Archivné systémy
             </nuxt-link>
             <nuxt-link to="/bezpecnost" class="header__menu--item">
@@ -195,7 +195,6 @@ export default {
         font-family: Exo2-Regular;
         display: flex;
         align-items: center;
-      
 
         &:hover {
          background: none !important;

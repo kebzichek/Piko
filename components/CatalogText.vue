@@ -1,5 +1,5 @@
 <template>
-    <div class="catalog__wrapper" :id="id">
+    <div class="catalog__wrapper catalogtext" :id="id">
 
         <div class="catalog__info--wrapper">
 
@@ -21,48 +21,7 @@
 
         </div>
 
-        <div class="catalog__items">
-
-            <div class="container">
-
-                <div class="catalog__items--wrapper">
-
-                    <div class="catalog__items--menu">
-
-                        <ul>
-
-                            <li v-for="(text,index) in textCatalog" :key="index"><div :class="view==index ? 'active' : ''" class="teoretical-link" @click="view=index">{{text.link}}</div></li>
-
-                        </ul>
-
-                    </div>
-
-                    <div class="catalog__items--text">
-
-                        <div class="text-wrapper">
-                            
-                            <p class="text">{{ textCatalog[view].text }}</p>
-                            <div class="links">
-                                <popup :textPopup="textPopup[view]"></popup>
-                                <!--<a :href="pdfDownload" class="download" download>Stiahnúť katalóg</a>-->
-                            </div>
-
-                        </div>
-
-                        <div class="img__wrapper" :style="{backgroundImage: 'url(\'/images/'+ srcCatalog +'.png\')'}">
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-        <div class="catalog__background"></div>
+      
 
     </div>
 </template>
@@ -70,14 +29,9 @@
 
 
 <script>
-import Popup from '~/components/Popup'
+
 
 export default {
-    components: {
-
-        Popup,
-
-    },
     data() {
             return {
                 view: 0,
@@ -93,32 +47,36 @@ export default {
             type: String,
             required: true
         },
-        textCatalog: {
-            type: Array,
-            required: true
-        },
         srcInfo: {
             type: String
-        },
-        srcCatalog: {
-            type: String
-        },
-        textPopup: {
-            type: Array,
-            required: false
         },
         id: {
             type: String
         },
-        pdfDownload: {
-            type: String
-        }
 
     }
 }
 </script>
 
 <style lang="less">
+
+.catalogtext__back {
+
+    position: relative;
+
+    .catalog__wrapper {
+
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+
+    .catalog__right {
+
+        padding-bottom: 0px !important;
+
+    }
+
+}
 
 .catalog {
 

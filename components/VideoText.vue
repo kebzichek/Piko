@@ -15,13 +15,13 @@
 
                 </div>
 
-                <div class="video-text__video">
+               <!-- <div class="video-text__video">
 
                     <span class="info">Viac o našich archívných systémoch</span>
 
                     <iframe width="490" height="280" src="https://www.youtube.com/embed/QTQNYo4fc40" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-                </div>
+                </div>-->
 
                
 
@@ -65,7 +65,7 @@ export default {
 
         @media (max-width: 769px) {
 
-            margin-bottom: 200px;
+            margin-bottom: 50px;
 
         }
 
@@ -116,7 +116,7 @@ export default {
 
     &__text {
 
-        width: 490px;
+        width: 550px;
         font-family: Exo2-Regular;
         font-size: 14px;
         margin-top: 100px;

@@ -8,34 +8,38 @@
         <main>
 
           <VideoText 
-          title="Moderné trezory a trezorové skrine" 
+          title="Bezpečnostné trezory a trezorové skrine" 
           text="Zákazník si môže vybrať zo širokého sortimentu trezorov a trezorových skríň v rôznych triedach bezpečnosti. Trezory a trezorové skrine sú doplnené o nábytkové a stenové trezory (kovové bezpečnostné schránky) určené súkromným osobám pre použitie v rodinných domoch a bytoch. Výrobkovú radu uzatvárajú výrobky pre otvorené bankové pracoviská, špeciálne konštrukcie trezorov, montované a komorové trezory.">
           </VideoText>
 
-          <Catalog 
+          <div class="catalogtext__back">
+          <CatalogText 
           id="bezpecnostne_trezorove_skrine"
-          srcInfo="catalog_info_regaly.png"
-          srcCatalog="catalog_img"
-          :textCatalog="catalogText1"
-          title="Bezpečnostné trezorové skrine" 
-          textInfo="Bezpečnostné trezorové skrine triedy EK 4100 - 4300 disponujú jednokrídlovou alebo dvojkrídlovou konštrukciou dverí (v závislosti od veľkosti skrine), zaistením dverí aretačnými čapmi a trojsmerným rozvorovým mechanizmom. Trezorové skrine sú štandardne uzamykateľné mechanickým bezpečnostným zámkom s dvomi kľúčmi (na želanie je možné zostaviť kombináciu zámkov podľa výberu zákazníka)."
-          :textPopup="textPopup1"
-          pdfDownload="katalog.pdf"
+          srcInfo="trezorove_skrine.png"
+          title="Trezorové skrine" 
+          textInfo="Bezpečnostné trezorové skrine EK 4100, ako jednoplášťové oceľové skrine, spoľahlivo ochránia uložené predmety pomocou istenia dverí aretačnými čapmi a trojsmerným rozvorovým mechanizmom. Trezorové skrine sú štandardne uzamykateľné mechanickým bezpečnostným zámkom s dvomi kľúčmi. Vnútorná výbava predstavuje variabilne prestaviteľné police. Skrine je možné ukotviť o podlahu pomocou kotviacich otvorov. Povrch je štandardne upravený práškovou farbou RAL 7035 – svetlosivá, avšak je možné aplikovať aj iné farby podľa vzorkovníka RAL."
           >
           
-          </Catalog>
-          <Catalog 
+          </CatalogText>
+          <CatalogText 
           id="bezpecnostne_trezory"
           class="catalog__right"
-          srcInfo="catalog_img_right.png"
-          srcCatalog="katalog"
-          :textCatalog="catalogText2"
-          :textPopup="textPopup2" 
+          srcInfo="bezp_trezory.png"
           title="Bezpečnostné trezory" 
-          textInfo="Výrobkovú radu EK 4700 predstavujú bezpečnostné trezory v triedach bezpečnosti 0 - 5. Certifikované sú podľa normy EN 1143-1 v súlade s bezpečnostným štandardom NBÚ. Všetky trezory majú viacplášťovú konštrukciu. Dvere trezorov sú istené aretačnými čapmi a štvorstranným rozvorovým mechanizmom. Štandardné vybavenie všetkých trezorov predstavujú variabilne prestaviteľné police a príprava pre montáž EZS. "
-          pdfDownload="katalog.pdf"
+          textInfo="Bezpečnostné trezory série EK 4700 vyrábané v triedach bezpečnosti 0 – 5. Sú certifikované podľa normy EN 1143-1 v súlade s bezpečnostnými štandardom NBÚ. Všetky trezory majú viacplášťovú konštrukciu. Dvere trezorov sú istené aretačnými čapmi a štvorstranným rozvorovým mechanizmom. Štandardné vybavenie predstavujú variabilne prestaviteľné police  a príprava pre montáž EZS. Voliteľne môže byť trezor doplnený o police, vnútorné uzamykateľné skrinky, výsuvné rámy a pod. Všetky trezory je možné ukotviť o podlahu pomocou kotviacich otvorov. Povrch je štandardne upravený práškovou farbou RAL 7035 – svetlosivá, avšak je možné aplikovať aj iné farby podľa vzorkovníka RAL. Na zaistenie maximálnej bezpečnosti uskladnených predmetov sa používajú kvalitné zámky renomovaných svetových výrobcov, ako sú Mauer, Wittkopp, Sargent & Greenleaf, alebo La Gard. Použité zámky môžu byť kľúčové, ružicové, tlačidlové, alebo ich kombinácia."
           >
-          </Catalog>
+          </CatalogText>
+          <CatalogText 
+          id="nabytkove_a_stenove_trezory"
+          srcInfo="nabytkove_a_stenove.png"
+          title="Nábytkové a stenové trezory " 
+          textInfo="Trezory triedy EK 4500 N (nábytkové) a EK 4500 S (stenové) sú konštrukčne navrhnuté tak, aby umožňovali jednoduchú inštaláciu do nábytku, alebo do steny. Štandardne sú vybavené kvalitným trezorovým zámkom zvyšujúcim ochranu všetkých uskladnených dokumentov a predmetov. Uvedené trezory sú určené do domácností, kancelárií, prípadne hotelov."
+          >
+          </CatalogText>
+          <div class="catalog__right">
+           <div class="catalog__background"></div>
+          </div>
+          </div>
 
         </main>
 
@@ -52,6 +56,7 @@ import Hero from '~/components/Hero'
 import HeroMenu from '~/components/HeroMenu'
 import VideoText from '~/components/VideoText'
 import Catalog from '~/components/Catalog'
+import CatalogText from '~/components/CatalogText'
 
 export default {
 
@@ -61,7 +66,8 @@ export default {
     Hero,
     HeroMenu,
     VideoText,
-    Catalog
+    Catalog,
+    CatalogText
 
   },
    data(){
@@ -89,8 +95,9 @@ export default {
         {title:"EK 4700.3",text:"Bezpečnostné trezory série EK 4700.3 vyhovujú stupňu zabezpečenia triedy 3 podľa EN 1143-1 (80/120 RU).",mainimg:"/images/ek_47003.jpg",infoimg:"/images/ek_4100_infoimg.png"},
       ],
       menuItems:[
-        {link:"Bezpečnostné trezorové skrine",id:"bezpecnostne_trezorove_skrine"},
+        {link:"Trezorové skrine",id:"bezpecnostne_trezorove_skrine"},
         {link:"Bezpečnostné trezory",id:"bezpecnostne_trezory"},
+         {link:"Nábytkové a stenové trezory",id:"nabytkove_a_stenove_trezory"},
       ]
     }
   },
