@@ -7,10 +7,7 @@ if (isset($_POST["type"]) && $_POST["type"] == "email"){
 }
 
 function send_mail($from, $name, $phone, $message){
-    if(preg_match("(r|n)", $from)){    
-        die("Nespravny format email adresy!");
-    }
-    $message_formated = "Nová zpráva z webu! <br> Od: email: ".$from.",<br> telefon: ".$phone.",<br> Zpráva: <br>";
+    $message_formated = "Nová zpráva z webu! <br> Od:<br> Jméno: ".$name.",<br> Email: ".$from.",<br> Telefon: ".$phone.",<br> Zpráva: <br>";
     $message_formated .= $message;
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
