@@ -8,7 +8,8 @@
         <main>
 
           <VideoText 
-          title="Bezpečnostné trezory a trezorové skrine" 
+          title="Bezpečnostné trezory a trezorové skrine"
+          fillColor="#DF9E00"
           text="Zákazník si môže vybrať zo širokého sortimentu trezorov a trezorových skríň v rôznych triedach bezpečnosti. Trezory a trezorové skrine sú doplnené o nábytkové a stenové trezory (kovové bezpečnostné schránky) určené súkromným osobám pre použitie v rodinných domoch a bytoch. Výrobkovú radu uzatvárajú výrobky pre otvorené bankové pracoviská, špeciálne konštrukcie trezorov, montované a komorové trezory.">
           </VideoText>
 
@@ -109,7 +110,12 @@ export default {
 
         class: 'color__yellow'
 
-      }
+      },
+       meta: [
+        { hid: 'description', name: 'description', content: 'Trezory vo všetkých triedach bezpečnosti pre domáce aj firemné použitie. Poradíme s výberom a dodáme trezor za super cenu na mieru presne pre vás.' },
+        {hid: 'og:title', property: 'og:title', content: 'Bezpečnostné trezory na mieru. Všetky triedy. | PIKO s.r.o.'},
+        {hid: 'og:description', property: 'og:description', content: 'Trezory vo všetkých triedach bezpečnosti pre domáce aj firemné použitie. Poradíme s výberom a dodáme trezor za super cenu na mieru presne pre vás.'},
+      ],
 
     }
 

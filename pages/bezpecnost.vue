@@ -9,6 +9,7 @@
 
           <VideoText 
           title="Ochrana pracovísk, bezpečnostné prvky na mieru" 
+          fillColor="#B62323"
           text='Funkcia a činnosť mnohých pracovísk je spojená so zvýšeným rizikom lúpeže, čo zvyšuje nároky na triedu bezpečnosti ich zabezpečenia. Výrobky série EK5000 sú určené na použitie práve v rizikovom priestore, pričom neslúžia len na ochranu predmetov, ale aj samotných zamestnancov. Ponúkame návrhy, výrobu, dodávku a montáž zabezpečovacích mechanických systémov v rôznych triedach bezpečnosti podľa DIN 52290. '>
           </VideoText>
 
@@ -25,7 +26,7 @@
           class="catalog__right"
           srcInfo="bezp_dvere.png"
           title="Bezpečnostné dvere a steny s balistickou odolnosťou" 
-          textInfo="Bezpečnostné dvere so zvýšenou balistickou odolnosťou sú určené na mechanické zabezpečenie prístupu do chránených objektov , pokladní, vstupných dverí do špeciálnych miestností, archívov, finančných inštitúcií, správnych a daňových úradov, ale aj nemocníc, knižníc, predajní, kancelárií a skladov. Bezpečnostné dvere spĺňajú triedu bezpečnosti 4 s balistickou odolnosťou podľa vyhotovenia G0 alebo G2. Kombináciou vysokokvalitných výrobkov DK II  je možné zmeniť vybrané objekty, miestnosti a trezorové komory na bezpečnostné montované komory.">
+          textInfo="Bezpečnostné dvere so zvýšenou balistickou odolnosťou sú určené na mechanické zabezpečenie prístupu do chránených objektov, pokladní, vstupných dverí do špeciálnych miestností, archívov, finančných inštitúcií, správnych a daňových úradov, ale aj nemocníc, knižníc, predajní, kancelárií a skladov. Bezpečnostné dvere spĺňajú triedu bezpečnosti 4 s balistickou odolnosťou podľa vyhotovenia G0 alebo G2. Kombináciou vysokokvalitných výrobkov DK II  je možné zmeniť vybrané objekty, miestnosti a trezorové komory na bezpečnostné montované komory.">
           </CatalogText>
 
           <CatalogText 
@@ -87,7 +88,12 @@ export default {
 
         class: 'color__red'
 
-      }
+      },
+       meta: [
+        { hid: 'description', name: 'description', content: 'Návrhy, výroba a montáž zabezpečovacích systémov a bezpečnostných prvkov vo všetkých triedach bezpečnosti. Bezpečnostné mreže, steny, dvere, okienka, komory.' },
+        {hid: 'og:title', property: 'og:title', content: 'Zabezpečenie pracovísk na mieru | PIKO s.r.o.'},
+        {hid: 'og:description', property: 'og:description', content: 'Návrhy, výroba a montáž zabezpečovacích systémov a bezpečnostných prvkov vo všetkých triedach bezpečnosti. Bezpečnostné mreže, steny, dvere, okienka, komory.'},
+      ],
 
     }
 

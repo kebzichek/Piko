@@ -8,6 +8,7 @@
         <main>
 
           <VideoText 
+          fillColor="#2385B6"
           title="Kvalitne rešenie pre vaš archív" 
           text="Pohyblivé regálové systémy (EK7500) a pevné regálové systémy (EK7600) sú skonštruované tak, aby vyhoveli všetkým požiadavkám zákazníkov na efektívnosť, optimalizáciu priestoru, bezpečnosť a bezporuchovosť. Pohyblivé a pevné regálové systémy sú ideálne pre všetky pracoviská, kde sa skladuje veľké množstvo materiálu a dokumentov. Regálový systém je navrhovaný s ohľadom na maximálne využitie kapacity archívu. Pri návrhu zohľadníme vaše požiadavky na skladovaný materiál a dizajn archívneho systému.">
           </VideoText>
@@ -19,7 +20,7 @@
           :textCatalog="catalogText1"
           :textPopup="textPopup1"
           title="Pohyblivé a pevné regálové systémy" 
-          textInfo="Pevné regály sú vhodné všade tam, kde je potrebný neustály prístup k skladovanému materiálu viacerých osôb súčasne. Pohyblivé regály efektívne šetria dostupnú plochu tak, že uličku medzi regálmi vytvoria len na mieste, kde je potrebná. Kapacita regálov sa tak zvýši až o 80%. Regály sa pohybujú po koľajniciach, ktoré môžu byť zaliate priamo do podlahy, alebo sú na povrchu ako samonosné, bez mechanického upevnenia o podlahu. Priestor medzi koľajami je vyplnený drevotrieskovým pódiom, na ktorom je položená nášľapná vrstva zPVC.Pohon regálov môže byť mechanický, pomocou otočných kľúk, alebo elektronický.Elektronický pohon umožní ovládanie regálov samostatne, alebo pomocou PC.">
+          textInfo="Pevné regály sú vhodné všade tam, kde je potrebný neustály prístup k skladovanému materiálu viacerých osôb súčasne. Pohyblivé regály efektívne šetria dostupnú plochu tak, že uličku medzi regálmi vytvoria len na mieste, kde je potrebná. Kapacita regálov sa tak zvýši až o 80%. Regály sa pohybujú po koľajniciach, ktoré môžu byť zaliate priamo do podlahy, alebo sú na povrchu ako samonosné, bez mechanického upevnenia o podlahu. Priestor medzi koľajami je vyplnený drevotrieskovým pódiom, na ktorom je položená nášľapná vrstva z PVC.Pohon regálov môže byť mechanický, pomocou otočných kľúk, alebo elektronický. Elektronický pohon umožní ovládanie regálov samostatne, alebo pomocou PC.">
           </Catalog>
 
           <Catalog 
@@ -91,8 +92,12 @@ export default {
 
         class: 'color__blue'
 
-      }
-
+      },
+      meta: [
+        { hid: 'description', name: 'description', content: 'Pohyblivé aj nepohyblivé regálové a archivačné systémy na mieru, presne pre vaše potreby. Pomôžeme vám s výberom a vyrobíme regálový systém, aký potrebujete.' },
+        {hid: 'og:title', property: 'og:title', content: 'Regálové a archivačné systémy na mieru | PIKO s.r.o.'},
+        {hid: 'og:description', property: 'og:description', content: 'Pohyblivé aj nepohyblivé regálové a archivačné systémy na mieru, presne pre vaše potreby. Pomôžeme vám s výberom a vyrobíme regálový systém, aký potrebujete.'},
+      ],
     }
 
   }

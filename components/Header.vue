@@ -11,18 +11,18 @@
             </b-navbar-item>
         </template>
         <template slot="start">
-            <nuxt-link to="/" class="header__menu--item" @click="active">
+            <b-navbar-item tag="router-link" to="/" class="header__menu--item">
                 Archivné systémy
-            </nuxt-link>
-            <nuxt-link to="/bezpecnost" class="header__menu--item">
+            </b-navbar-item>
+            <b-navbar-item tag="router-link" to="/bezpecnost" class="header__menu--item">
                 Bezpečnostné systémy
-            </nuxt-link>
-            <nuxt-link to="/trezory" class="header__menu--item">
+            </b-navbar-item>
+            <b-navbar-item tag="router-link" to="/trezory" class="header__menu--item">
                 Trezory
-            </nuxt-link>
-            <nuxt-link to="#form" class="header__menu--item">
+            </b-navbar-item>
+            <b-navbar-item tag="router-link" to="#form" class="header__menu--item">
                 Kontakty
-            </nuxt-link>
+            </b-navbar-item>
         </template>
     </b-navbar>
 

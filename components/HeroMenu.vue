@@ -7,7 +7,7 @@
 
                     <ul class="hero__contentmenu--items">
 
-                        <li class="hero__contentmenu--item" v-for="(text,index) in menuItems" :key="index"><nuxt-link :class="view==index ? 'active' : ''" class="teoretical-link" @click="view=index" :to="'#'+text.id">{{text.link}}</nuxt-link></li>
+                        <li class="hero__contentmenu--item" v-for="(text,index) in menuItems" :key="index"><nuxt-link class="teoretical-link" :to="'#'+text.id">{{text.link}}</nuxt-link></li>
 
                     </ul>
 

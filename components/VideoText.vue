@@ -2,7 +2,7 @@
     <div class="video-text__wrapper">
 
         <div class="container">
-
+ 
             <div class="video-text__content">
 
                 <div class="video-text__text">
@@ -11,8 +11,7 @@
 
                     <p class="text">{{ text }}</p>
 
-                    <span class="arrow-down"></span>
-
+                    <arrow-down :fillColor=fillColor />
                 </div>
 
                <!-- <div class="video-text__video">
@@ -35,9 +34,16 @@
 </template>
 
 <script>
+import ArrowDown from '~/components/ArrowDown'
 export default {
+    components:{
+        ArrowDown
+    },
     props: {
-
+        fillColor: {
+            type: String,
+            default: "#ffffff"
+        },
         title: {
             type: String,
             required: true
@@ -147,11 +153,12 @@ export default {
 
             width: 20px;
             height: 25px;
-            background-image: url(~assets/images/svg/arrow-down.svg);
+            content: url(~assets/images/svg/arrow-down.svg);
+            fill: white;
             background-size: cover;
             background-repeat: no-repeat;
             display: block;
-
+            
             @media (max-width: 570px) {
 
                 display: none;

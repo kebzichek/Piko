@@ -38,23 +38,21 @@
             <div class="footer__form column is-5">
 
                 <div class="footer__form--title">Máte zaujem o realizáciu? <br>Dajte nám vedieť.</div>
-                <form class="form">
 
                     <b-field>
-                        <b-input placeholder="Meno"></b-input>
+                        <b-input v-model="name" placeholder="Meno"></b-input>
                     </b-field>
                     <b-field>
-                        <b-input type="email" placeholder="E-mail"></b-input>
+                        <b-input  v-model="mail" type="email" placeholder="E-mail"></b-input>
                     </b-field>
                     <b-field>
-                        <b-input type="tel" placeholder="Telefon"></b-input>
+                        <b-input v-model="tel" type="tel" placeholder="Telefon"></b-input>
                     </b-field>
                     <b-field>
-                        <b-input maxlength="200" type="textarea"></b-input>
+                        <b-input v-model="message" name="message" type="textarea"></b-input>
                     </b-field>
-                    <input class="btn" type="submit" value="Poslať správu">
+                    <input class="btn" @click="suc()" type="button" value="Poslať správu">
 
-                </form>
 
             </div>
           </div>
@@ -65,6 +63,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import Header from '~/components/Header'
 import Hero from '~/components/Hero'
 
@@ -77,11 +76,10 @@ export default {
   },
   data() {
             return {
-                firstname: null,
-                lastname: null,
-                age: null,
-                username: null,
-                password: null,
+                name: "",
+                mail: null,
+                message: "",
+                tel: "",
                 confirmPassword: null,
                 gender: null,
                 question: null,
@@ -105,8 +103,48 @@ export default {
                         position: 'is-bottom'
                     })
                 });
-            }
+            },
+            suc(){
+      this.$buefy.toast.open({
+                        message: 'Formulár zatiaľ nefunguje. Použite prosím e-mail piko.sro@gmail.com',
+                        type: 'is-danger',
+                        position: 'is-bottom'
+                    })
+            },
+               sendMail(){
+      if (this.name == "" || this.email == "" || this.message == ""){
+        return false;
+      }
+      axios({
+        method: 'post',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        url: this.$store.state.ajaxfile,
+        data: {
+          "mail": "Contact",
+          "name": this.name,
+          "email": this.mail,
+          "tel": this.tel,
+          "message":this.message
         }
+    })
+    .then(res => {
+      if (res.data == "ok"){
+        this.email = "";
+        this.name = "";
+        this.message = "";
+        this.$buefy.toast.open({
+                    message: 'Die Email wurde erfolgreich versendet',
+                    type: 'is-success'
+                })
+          
+            
+      } else {
+        console.error(res.data);
+      }
+      });
+    }
+  }
+        
 }
 </script>
 
@@ -182,6 +220,7 @@ html {
         .btn {
 
             background: @colorBlue;
+            cursor: not-allowed;
 
         }
 
