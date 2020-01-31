@@ -38,18 +38,19 @@
             <div class="footer__form column is-5">
 
                 <div class="footer__form--title">Máte zaujem o realizáciu? <br>Dajte nám vedieť.</div>
+                <form class="form" @submit.prevent="sendMail()">
 
                     <b-field>
-                        <b-input v-model="name" placeholder="Meno"></b-input>
+                        <b-input placeholder="Meno" v-model="name"></b-input>
                     </b-field>
                     <b-field>
-                        <b-input  v-model="mail" type="email" placeholder="E-mail"></b-input>
+                        <b-input type="email" placeholder="E-mail" v-model="email"></b-input>
                     </b-field>
                     <b-field>
-                        <b-input v-model="tel" type="tel" placeholder="Telefon"></b-input>
+                        <b-input type="tel" placeholder="Telefon" v-model="phone"></b-input>
                     </b-field>
                     <b-field>
-                        <b-input v-model="message" name="message" type="textarea"></b-input>
+                        <b-input maxlength="200" type="textarea" v-model="message"></b-input>
                     </b-field>
                     <input class="btn" @click="suc()" type="button" value="Poslať správu">
 
@@ -66,6 +67,7 @@
 import axios from 'axios'
 import Header from '~/components/Header'
 import Hero from '~/components/Hero'
+import axios from 'axios';
 
 export default {
   components: {
@@ -83,10 +85,43 @@ export default {
                 confirmPassword: null,
                 gender: null,
                 question: null,
-                flagTerms: false
+                flagTerms: false,
+                name: null,
+                email: null,
+                phone: null,
+                message: null
             }
         },
         methods: {
+            sendMail(){
+                if (this.name == null || (this.email == null && this.phone == null) || this.message == null){
+                    console.log("Nevyplněné všechny údaje");
+                    return;
+                }
+                axios({
+                    method: 'post',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    url: "http://pikosro.sk/ajax.php",
+                    data: {
+                        "type": "email",
+                        "email": this.email,
+                        "name": this.name,
+                        "number": this.phone,
+                        "message":this.message
+                    }
+                })
+                .then(res => {
+                    if (res.data == "ok"){
+                        this.email = "";
+                        this.name = "";
+                        this.phone = "";
+                        this.message = "";
+                    } else {
+                        console.error(res.data);
+                    }
+                })
+                .catch(e => console.error(e));
+            },
             validateBeforeSubmit() {
                 this.$validator.validateAll().then((result) => {
                     if (result) {
