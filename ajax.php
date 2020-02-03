@@ -6,7 +6,7 @@ if (isset($_POST["type"]) && $_POST["type"] == "Contact"){
 }
 
 function send_mail($from, $name, $phone, $message){
-    $message_formated = "Nová zpráva z webu! <br> Od:<br> Jméno: ".$name.",<br> Email: ".$from.",<br> Telefon: ".$phone.",<br> Zpráva: <br>";
+    $message_formated = "Nová zpráva z webu Pikosro.cz! <br><br> Jméno: ".$name.",<br> Email: ".$from.",<br> Telefon: ".$phone.",<br> Zpráva: <br>";
     $message_formated .= $message;
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
