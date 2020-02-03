@@ -11,7 +11,7 @@ function send_mail($from, $name, $phone, $message){
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
     
-    mail("dominio@tvorbamap.cz", "Kontaktní formulář | Piko ", $message_formated, $headers);
+    mail("piko.sro@gmail.com", "Kontaktní formulář | Piko ", $message_formated, $headers);
     echo "ok";
 }
 ?>
