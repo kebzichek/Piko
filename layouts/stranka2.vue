@@ -102,18 +102,11 @@ export default {
                         return;
                     }
                     this.$buefy.toast.open({
-                        message: 'Form is not valid! Please check the fields.',
+                        message: 'Niečo sa pokazilo. Skúste to znova alebo nám napíšte e-mail na piko.sro@gmail.com',
                         type: 'is-danger',
                         position: 'is-bottom'
                     })
                 });
-            },
-            suc(){
-      this.$buefy.toast.open({
-                        message: 'Formulár zatiaľ nefunguje. Použite prosím e-mail piko.sro@gmail.com',
-                        type: 'is-danger',
-                        position: 'is-bottom'
-                    })
             },
                sendMail() {
                  if (this.name == "" || this.email == "" || this.message == "") {
@@ -140,7 +133,7 @@ export default {
                        this.message = "";
                        this.phone = "";
                        this.$buefy.toast.open({
-                         message: 'Die Email wurde erfolgreich versendet',
+                         message: 'E-mail bol odoslaný, ďakujeme, budeme vás kontaktovať.',
                          type: 'is-success'
                        })
                      } else {
