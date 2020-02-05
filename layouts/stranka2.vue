@@ -39,7 +39,6 @@
 
                 <div class="footer__form--title">Máte zaujem o realizáciu? <br>Dajte nám vedieť.</div>
                 <form class="form" @submit.prevent="sendMail()">
-
                     <b-field>
                         <b-input placeholder="Meno" v-model="name"></b-input>
                     </b-field>
@@ -52,8 +51,8 @@
                     <b-field>
                         <b-input maxlength="200" type="textarea" v-model="message"></b-input>
                     </b-field>
-                    <input class="btn" @click="suc()" type="button" value="Poslať správu">
-
+                    <input class="btn" @click="sendMail()" type="button" value="Poslať správu">
+                </form>
 
             </div>
           </div>
@@ -64,10 +63,9 @@
 </template>
 
 <script>
-import axios from 'axios'
 import Header from '~/components/Header'
 import Hero from '~/components/Hero'
-import axios from 'axios';
+import axios from 'axios'
 
 export default {
   components: {
@@ -93,35 +91,6 @@ export default {
             }
         },
         methods: {
-            sendMail(){
-                if (this.name == null || (this.email == null && this.phone == null) || this.message == null){
-                    console.log("Nevyplněné všechny údaje");
-                    return;
-                }
-                axios({
-                    method: 'post',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    url: "http://pikosro.sk/ajax.php",
-                    data: {
-                        "type": "email",
-                        "email": this.email,
-                        "name": this.name,
-                        "number": this.phone,
-                        "message":this.message
-                    }
-                })
-                .then(res => {
-                    if (res.data == "ok"){
-                        this.email = "";
-                        this.name = "";
-                        this.phone = "";
-                        this.message = "";
-                    } else {
-                        console.error(res.data);
-                    }
-                })
-                .catch(e => console.error(e));
-            },
             validateBeforeSubmit() {
                 this.$validator.validateAll().then((result) => {
                     if (result) {
@@ -146,38 +115,39 @@ export default {
                         position: 'is-bottom'
                     })
             },
-               sendMail(){
-      if (this.name == "" || this.email == "" || this.message == ""){
-        return false;
-      }
-      axios({
-        method: 'post',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        url: this.$store.state.ajaxfile,
-        data: {
-          "mail": "Contact",
-          "name": this.name,
-          "email": this.mail,
-          "tel": this.tel,
-          "message":this.message
-        }
-    })
-    .then(res => {
-      if (res.data == "ok"){
-        this.email = "";
-        this.name = "";
-        this.message = "";
-        this.$buefy.toast.open({
-                    message: 'Die Email wurde erfolgreich versendet',
-                    type: 'is-success'
-                })
-          
-            
-      } else {
-        console.error(res.data);
-      }
-      });
-    }
+               sendMail() {
+                 if (this.name == "" || this.email == "" || this.message == "") {
+                   return false;
+                 }
+                 axios({
+                     method: 'post',
+                     headers: {
+                       'Content-Type': 'application/x-www-form-urlencoded'
+                     },
+                     url: this.$store.state.ajaxfile,
+                     data: {
+                       "type": "Contact",
+                       "name": this.name,
+                       "email": this.email,
+                       "phone": this.phone,
+                       "message": this.message
+                     }
+                   })
+                   .then(res => {
+                     if (res.data == "ok") {
+                       this.email = "";
+                       this.name = "";
+                       this.message = "";
+                       this.phone = "";
+                       this.$buefy.toast.open({
+                         message: 'Die Email wurde erfolgreich versendet',
+                         type: 'is-success'
+                       })
+                     } else {
+                       console.error(res.data);
+                     }
+                   });
+               }
   }
         
 }
